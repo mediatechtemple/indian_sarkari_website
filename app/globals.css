@@ -1,6 +1,14 @@
+@import url("https://fonts.googleapis.com/css2?family=Montserrat:wght@100..900&display=swap");
+@import url("https://fonts.googleapis.com/css2?family=Poppins:wght@100..900&display=swap");
 @tailwind base;
 @tailwind components;
 @tailwind utilities;
+* {
+  box-sizing: border-box;
+  font-family: "Montserrat", serif;
+  margin: 0;
+  padding: 0;
+}
 
 :root {
   --background: #ffffff;
@@ -18,4 +26,29 @@ body {
   color: var(--foreground);
   background: var(--background);
   font-family: Arial, Helvetica, sans-serif;
+}
+.clip-polygon-middle {
+  clip-path: polygon(5% 0, 95% 0, 100% 50%, 95% 100%, 5% 100%, 0% 50%);
+  width: 111%;
+  transform: translate(-3%, 0);
+  padding-right: 10%;
+}
+
+/* global.css */
+@keyframes marquee {
+  0% {
+    transform: translateX(100%);
+  }
+  100% {
+    transform: translateX(-100%);
+  }
+}
+
+.animate-marquee {
+  animation: marquee 30s linear infinite;
+}
+.responsive-content {
+  width: 100%;
+  max-width: 100%;
+  overflow-x: auto;
 }
