@@ -1,3 +1,5 @@
+import Link from "next/link";
+
 export const menuItems = [
   { name: "Home", link: "/" },
   {
@@ -177,7 +179,7 @@ export const contentData = [
             8. Sarkari Naukri WhatsApp Group :{" "}
           </span>
           Join our{" "}
-          <a className="text-link-color underline" href="#">
+          <a className="text-linkColor underline" href="#">
             Sarkari Naukri WhatsApp Group Link
           </a>{" "}
           to get the latest Sarkari Naukri notifications.
@@ -188,7 +190,7 @@ export const contentData = [
             9. Telegram Channel :{" "}
           </span>
           We also have a{" "}
-          <a className="text-link-color underline" href="#">
+          <a className="text-linkColor underline" href="#">
             Telegram channel
           </a>{" "}
           for students where we update the latest notifications and also post
@@ -202,7 +204,7 @@ export const contentData = [
     content: (
       <p className="text-xs leading-relaxed sm:text-sm md:text-sm md:leading-6 lg:text-base lg:leading:7">
         Getting a government job is a big deal, and
-        <a className="text-link-color underline" href="#">
+        <a className="text-linkColor underline" href="#">
           India Sarkari Naukri.Com
         </a>
         is here to help you succeed. Whether you just finished school, have
@@ -327,7 +329,7 @@ export const contentData = [
         </p>
         <p className="text-xs mt-3 leading-relaxed sm:text-sm md:text-sm md:leading-6 lg:text-base lg:leading:7">
           Start your journey towards a great career. Check out the many
-          <a className="text-link-color underline" href="#">
+          <a className="text-linkColor underline" href="#">
             latest govt vacancy
           </a>
           options available and make a choice that sets the foundation for your
@@ -335,7 +337,7 @@ export const contentData = [
         </p>
         <p className="text-xs mt-3 leading-relaxed sm:text-sm md:text-sm md:leading-6 lg:text-base lg:leading:7">
           Visit
-          <a className="text-link-color underline" href="#">
+          <a className="text-linkColor underline" href="#">
             www.Indiasarkarinaukri.com
           </a>
            to learn more about Sarkari Naukri and start a journey towards a
@@ -345,6 +347,198 @@ export const contentData = [
     ),
   },
 ];
+
+export const allJobContentData = [
+  {
+    title: "Welcome to India Sarkari Naukri.Com",
+    content: (
+      <>
+        <p className="text-xs leading-relaxed sm:text-sm md:text-sm md:leading-6 lg:text-base lg:leading:7 lg:leading-7">
+          India 
+          <Link className="text-linkColor underline" href="#">
+            Sarkari Naukri.Com 
+          </Link>
+          is a Sarkari job portal for the latest govt Vacancy updates in India!
+          We are your trusted source for information on a wide range of job
+          vacancies, including ITI Apprentice, Graduate Apprentice,
+          Stenographer, Railway Jobs, and Bank Job Vacancies. Whether you're a
+          fresh graduate, an experienced professional, or someone looking to
+          make a career change, we've got you covered with the most up-to-date
+          and comprehensive job listings. Read on to explore the exciting
+          opportunities that await you in the government sector.
+        </p>
+        <p className=" mt-3 text-xs leading-relaxed sm:text-sm md:text-sm md:leading-6 lg:text-base lg:leading:7 lg:leading-7">
+          In today's competitive job market, securing a stable government job is
+          a dream for many in India. Government jobs offer job security,
+          attractive pay scales, and various benefits. In this comprehensive
+          guide, we will explore the latest Naukari Exam vacancies, including
+          the 
+          <Link className="text-linkColor underline" href="#">
+             Delhi Subordinate Services Selection Board (DSSSB)
+          </Link>{" "}
+          Vacancy, Staff Selection Commission (SSC) Delhi Police Constable
+          Vacancy, Union Public Service Commission (UPSC) recruitment, and
+          opportunities in the Indian Army, Navy, and Airforce. Stay tuned for
+          detailed information on these prestigious job openings.
+        </p>
+      </>
+    ),
+  },
+  {
+    title: "Delhi Subordinate Services Selection Board (DSSSB) Vacancy",
+    content: (
+      <>
+        <p className="text-xs leading-relaxed sm:text-sm md:text-sm md:leading-6 lg:text-base lg:leading:7">
+          DSSSB plays a pivotal role in recruiting highly qualified individuals
+          for various government departments in the National Capital Territory
+          of Delhi. Job seekers can find opportunities in fields such as
+          teaching, healthcare, administrative services, and more. The DSSSB
+          conducts regular examinations and announces vacancies through its
+          official website, making it crucial to keep an eye on their updates.
+        </p>
+        <h5 className="text-xs mt-4 mb-1 text-black font-semibold  sm:text-sm md:text-base lg:text-base">
+          Know more:{" "}
+          <a className="text-linkColor underline font-medium" href="#">
+            DSSSB Vacancy 2023
+          </a>
+        </h5>
+      </>
+    ),
+  },
+  {
+    title: "Staff Selection Commission (SSC) Delhi Police Constable Vacancy",
+    content: (
+      <p className="text-xs leading-relaxed sm:text-sm md:text-sm md:leading-6 lg:text-base lg:leading:7">
+        The SSC Delhi Police Constable recruitment is a sought-after opportunity
+        for those aspiring to serve in the law enforcement sector. This
+        recruitment drive offers positions in the Delhi Police Force, providing
+        candidates with a chance to contribute to the safety and security of the
+        national capital. The SSC conducts a rigorous selection process,
+        including written exams, physical endurance tests, and interviews,
+        ensuring that only the best candidates are selected.
+      </p>
+    ),
+  },
+  {
+    title: "Union Public Service Commission (UPSC) Recruitment",
+    content: (
+      <p className="text-xs leading-relaxed sm:text-sm md:text-sm md:leading-6 lg:text-base lg:leading:7">
+        UPSC is India's premier central recruiting agency, responsible for
+        appointing candidates to various prestigious civil services and
+        government positions. UPSC conducts a range of examinations, including
+        the Civil Services Examination (CSE), Indian Engineering Services (IES),
+        Indian Forest Services (IFS), and more. These examinations attract lakhs
+        of aspirants each year due to the exceptional career opportunities they
+        offer in the Indian Administrative Service (IAS), Indian Police Service
+        (IPS), and other elite government services.
+      </p>
+    ),
+  },
+  {
+    title: "Indian Army Jobs",
+    content: (
+      <p className="text-xs leading-relaxed sm:text-sm md:text-sm md:leading-6 lg:text-base lg:leading:7">
+        Serving in the Indian Army is a lifelong commitment to safeguarding the
+        nation's borders and maintaining internal security. The Army offers a
+        wide array of career opportunities for both officers and soldiers,
+        including technical, medical, and administrative roles. Aspiring
+        candidates can join through various entry modes, such as the National
+        Defence Academy (NDA), the Combined Defence Services (CDS) examination,
+        and the Short Service Commission (SSC) for technical and non-technical
+        roles.
+      </p>
+    ),
+  },
+  {
+    title: "Indian Navy Jobs",
+    content: (
+      <p className="text-xs leading-relaxed sm:text-sm md:text-sm md:leading-6 lg:text-base lg:leading:7">
+        The Indian Navy is a vital component of the nation's defense,
+        responsible for securing maritime borders and maintaining peace and
+        stability in the Indian Ocean region. Job seekers can explore diverse
+        career paths within the Navy, including executive, technical, and
+        education branches. The Indian Navy regularly releases recruitment
+        notifications for sailors, officers, and other technical and
+        non-technical positions.
+      </p>
+    ),
+  },
+  {
+    title: "Indian Air force Jobs",
+    content: (
+      <p className="text-xs leading-relaxed sm:text-sm md:text-sm md:leading-6 lg:text-base lg:leading:7">
+        Joining the Indian Air Force allows individuals to soar to new heights,
+        both literally and figuratively. The Air Force offers opportunities in
+        flying, technical, and ground duty branches. Candidates can apply
+        through various entry schemes like the Air Force Common Admission Test
+        (AFCAT), National Defence Academy (NDA), and Combined Defence Services
+        (CDS) examination. The Air Force ensures that recruits are equipped with
+        cutting-edge technology and training to protect Indian airspace and
+        project national power.
+      </p>
+    ),
+  },
+  {
+    title: "ITI Apprentice Jobs and Graduate Apprentice Jobs",
+    content: (
+      <>
+        <p className="text-xs leading-relaxed sm:text-sm md:text-sm md:leading-6 lg:text-base lg:leading:7">
+          At India Sarkari Naukri, we understand the importance of skill
+          development and on-the-job training. That's why we provide timely
+          updates on 
+          <Link className="text-linkColor underline" href="#">
+            ITI Apprentice
+          </Link>
+           and Graduate Apprentice job openings across various industries. These
+          apprenticeships offer valuable hands-on experience and are an
+          excellent way to kickstart your career. Stay tuned for notifications
+          from renowned organizations and government departments offering
+          apprenticeship programs that can set you on a path to success.
+        </p>
+        <h5 className="text-xs mt-4 mb-1 text-darkbule font-semibold  sm:text-sm md:text-base lg:text-base">
+          Stenographer Jobs:
+        </h5>
+        <p className="text-xs leading-relaxed sm:text-sm md:text-sm md:leading-6 lg:text-base lg:leading:7">
+          Are you skilled in shorthand and looking for a challenging career as a
+          stenographer in the government sector? India Sarkari Naukri brings you
+          the latest stenographer job vacancies from various government
+          departments and ministries. Stenographers play a crucial role in
+          maintaining official records and facilitating smooth communication.
+          Explore our listings to find stenographer job opportunities that match
+          your qualifications and aspirations.
+        </p>
+        <h5 className="text-xs mt-4 mb-1 text-darkbule font-semibold  sm:text-sm md:text-base lg:text-base ">
+          Railway Jobs:
+        </h5>
+        <p className="text-xs leading-relaxed sm:text-sm md:text-sm md:leading-6 lg:text-base lg:leading:7">
+          The Indian Railways is one of the largest employers in the country,
+          offering diverse career options. At India Sarkari Naukri, we keep you
+          updated on the latest railway job vacancies, including opportunities
+          in RRB (Railway Recruitment Board), Junior Engineer (JE), Loco Pilot,
+          Ticket Collector (TCE), Technician, Post Guard, Fireman, Group D
+          Staff, and Group C positions. Whether you're interested in technical
+          roles, operational positions, or administrative jobs, we have
+          comprehensive listings to help you navigate the railway job landscape.
+        </p>
+      </>
+    ),
+  },
+  {
+    title: "Bank Job Vacancies",
+    content: (
+      <p className="text-xs leading-relaxed sm:text-sm md:text-sm md:leading-6 lg:text-base lg:leading:7">
+        For those seeking a secure and rewarding career in the banking sector,
+        India Sarkari Naukri provides detailed information on bank job
+        vacancies. We cover a wide spectrum of bank jobs, including Probationary
+        Officer (PO), Clerk, Accountant, and more. As banks are the backbone of
+        the financial sector, they offer excellent opportunities for growth and
+        stability. Keep yourself updated with our listings to find your ideal
+        banking job and embark on a journey toward financial success
+      </p>
+    ),
+  },
+];
+
 export const homeFaqs = [
   {
     question: "What is Sarkari Result?",
@@ -403,6 +597,38 @@ export const latestJobFaqs = [
     answer: "The prescribed age limit for Sarkari jobs is 18 to 35 years.",
   },
 ];
+export const allJobFaqs = [
+  {
+    question: " How to Secure a Government Job Without an Intexrview?",
+    answer:
+      "Many government job opportunities do not involve interviews as part of their selection process. For instance, examinations conducted by the Staff Selection Commission (SSC), including SSC CGL, SSC CHSL, and SSC MTS, do not include an interview stage. Applicants are typically required to complete objective tests, and in some cases, a descriptive test or a skill test (such as a typing test) for selection. Examinations like the IBPS Clerk and SBI Clerk Exams also follow a similar pattern, omitting the interview stage. Additionally, technical positions like those in the Railway Recruitment Board - Junior Engineer (RRB JE) and Railway Recruitment Board - Senior Section Engineer (RRB SSE) categories generally do not involve interviews either.",
+  },
+  {
+    question: " Which Government Jobs Offer the Best Salaries?",
+    answer:
+      "Some of the highest-paying government jobs in India encompass roles such as Indian Forest Service (IFoS) officers, ISRO scientists, RBI Grade B officers, and medical officers, among others.",
+  },
+  {
+    question: " Is TCS a Government Job?",
+    answer:
+      "It is important to note that Tata Consultancy Services (TCS) is not a government job. TCS is a multinational information technology services and consulting company headquartered in Mumbai, India.",
+  },
+  {
+    question: "How can you get a government job without an interview?",
+    answer:
+      "There are many government job positions where no interview is required. For example, in exams conducted by the Staff Selection Commission (SSC), such as SSC CGL, SSC CHSL, or SSC MTS, the interview stage is not included. Applicants typically need to complete an objective test, and in some cases, a descriptive exam or skill test (such as typing test) may also be required. Similarly, the IBPS Clerk and SBI Clerk exams are also exams where there is no interview stage. Additionally, technical positions like Railway Recruitment Board - Junior Engineer (RRB JE) and Railway Recruitment Board - Senior Section Engineer (RRB SSE) generally do not have an interview stage.",
+  },
+  {
+    question: "Which Examinations Do Not Include Interviews?",
+    answer:
+      "Several examinations do not incorporate interviews into their selection processes. For instance, exams conducted by the Staff Selection Commission (SSC), such as SSC CGL, SSC CHSL, and SSC MTS, do not include an interview stage. Similarly, both IBPS Clerk and SBI Clerk Exams follow this pattern by omitting the interview stage.",
+  },
+  {
+    question: "Which Positions Do Not Require Interviews?",
+    answer:
+      "Numerous positions within the government sector typically do not require interviews. For example, roles like Indian Army soldiers generally do not necessitate written tests or interviews, but candidates usually undergo a physical examination as part of the selection process.",
+  },
+];
 
 export const apiurl = "https://newindiansarkari-production.up.railway.app";
 
@@ -454,12 +680,12 @@ export const getData = async (endpoint) => {
   try {
     const response = await fetch(`${apiurl}${endpoint}`);
     if (!response.ok) {
-      console.log(`Failed to fetch: ${response.statusText}`);
+      // throw new Error(`Failed to fetch: ${response.statusText}`);
     }
     return await response.json();
   } catch (error) {
     console.error("API Error:", error);
-    // throw error;
+    //throw error;
   }
 };
 

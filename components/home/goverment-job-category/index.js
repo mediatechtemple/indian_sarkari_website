@@ -50,7 +50,7 @@ const CategoryList = () => {
 
   return (
     <div className="p-1">
-      <div className="border border-border-color shadow-custom mt-6 w-full p-3 pb-4">
+      <div className="border border-borderColor shadow-custom mt-6 w-full p-3 pb-4">
         <h4 className="text-center text-[18px] font-medium text-darkbule lg:text-2xl 2xl:text-2xl lg:mt-3 2xl:mt-3 xl:text-2xl xl:mt-2">
           Government Jobs By Top Categories
         </h4>
@@ -60,7 +60,7 @@ const CategoryList = () => {
               key={index}
               name={category.name}
               image={category.image}
-              path={category.path}
+              path={`/all-job?category=${category.path}`}
             />
           ))}
         </div>

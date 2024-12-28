@@ -38,11 +38,11 @@ const Header = () => {
         </div>
       </div>
       {/* Menu */}
-      <nav className="flex flex-wrap bg-darkbule text-text-color font-montserrat text-[15px] font-medium">
+      <nav className="flex flex-wrap bg-darkbule text-textColor font-montserrat text-[15px] font-medium">
         {menuItems.map((menuItem, index) => (
           <div key={index} className="relative group">
             <div
-              className={`text-[5px] font-medium border-r border-text-color px-[7px] sm:text-[8px] sm:p-[10px] md:text-[10px] md:font-medium md:py-3 lg:text-sm lg:p-3 xl:px-5 py-4 ${
+              className={` py-2 font-medium border-r border-textColor px-[7px] sm:text-[8px] sm:p-[10px] md:text-[10px] md:font-medium md:py-3 lg:text-[12px] xl:px-5 lg:py-4  ${
                 index === menuItems.length - 1 ? "last:border-r-0" : ""
               }`}
             >

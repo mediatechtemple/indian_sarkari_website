@@ -3,7 +3,7 @@ import React from "react";
 const ContentItem = ({ headingText, contentText }) => {
   return (
     <div>
-      <div className="bg-skyblue p-2 text-center text-white font-medium text-base sm:text-xl sm:py-3 md:text-2xl md:py-4 lg:text-2xl lg:font-semibold lg:py-4">
+      <div className="bg-skyblue p-2 text-center text-white font-medium text-base sm:text-xl sm:py-3 md:text-2xl md:py-4 lg:text-2xl lg:font-semibold py-2">
         {/* <h3 className="p-2 text-center text-white font-medium text-base sm:text-xl sm:py-3 md:text-2xl md:py-4 lg:text-2xl lg:font-semibold lg:py-4"> */}
         {headingText}
         {/* </h3> */}

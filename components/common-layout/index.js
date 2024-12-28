@@ -5,9 +5,9 @@ import Footer from "../footer";
 
 const CommonLayout = ({ children }) => {
   return (
-    <div className="w-full max-w-6xl m-auto">
+    <div className="w-full max-w-5xl m-auto">
       <Header />
-      <main className="container w-full max-w-6xl mx-auto">{children}</main>
+      <main className="container w-full max-w-5xl mx-auto">{children}</main>
       <Footer />
     </div>
   );

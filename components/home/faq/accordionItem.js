@@ -22,7 +22,7 @@ const AccordionItem = ({ question, answer }) => {
         }`}
       >
         {isOpen && (
-          <div className="p-2 border border-border-color sm:text-sm md:text-base lg:text-lg lg:w-9/12">
+          <div className="p-2 border border-borderColor sm:text-sm md:text-base lg:text-lg lg:w-9/12">
             {answer}
           </div>
         )}

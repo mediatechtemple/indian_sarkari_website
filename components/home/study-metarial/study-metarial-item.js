@@ -1,5 +1,5 @@
 const StudyMetarailItem = ({ title, items, imagePath }) => (
-  <div className="border border-border-color p-2 text-center">
+  <div className="border border-borderColor p-2 text-center">
     <h2 className="text-base py-4 lg:text-lg bg-skyblue font-semibold mb-4 text-white">
       {title}
     </h2>

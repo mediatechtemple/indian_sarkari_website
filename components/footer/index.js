@@ -17,47 +17,47 @@ const Footer = () => {
       </button>
 
       {/* Social Media Icons */}
-      <div className="hidden lg:block lg:fixed lg:top-[380px] lg:left-[120px]">
+      <div className="hidden lg:block lg:fixed lg:top-[380px] lg:left-[110px]">
         <ul className="hidden lg:flex lg:flex-col lg:space-y-4">
           <li>
-            <a
+            <Link
               className="w-12 h-12 flex items-center justify-center rounded-full bg-blue-600"
               href="#"
             >
               <RiFacebookFill className="text-2xl text-white" />
-            </a>
+            </Link>
           </li>
           <li>
-            <a
+            <Link
               className="w-12 h-12 flex items-center justify-center rounded-full bg-rose-500"
               href="#"
             >
               <RiInstagramLine className="text-2xl text-white" />
-            </a>
+            </Link>
           </li>
           <li>
-            <a
+            <Link
               className="w-12 h-12 flex items-center justify-center rounded-full bg-green-400"
               href="#"
             >
               <RiWhatsappLine className="text-2xl text-white" />
-            </a>
+            </Link>
           </li>
           <li>
-            <a
+            <Link
               className="w-12 h-12 flex items-center justify-center rounded-full bg-red-500"
               href="#"
             >
               <RiYoutubeLine className="text-2xl text-white" />
-            </a>
+            </Link>
           </li>
           <li>
-            <a
+            <Link
               className="w-12 h-12 flex items-center justify-center rounded-full bg-sky-400"
               href="#"
             >
               <FaTelegramPlane className="text-2xl text-white" />
-            </a>
+            </Link>
           </li>
         </ul>
       </div>
@@ -201,7 +201,7 @@ const Footer = () => {
       </div>
 
       {/* Copyright */}
-      <div className="mt-2 text-center text-sm p-4 lg:text-base text-white border-t border-border-color pt-4 pb-4">
+      <div className="mt-2 text-center text-sm p-4 lg:text-base text-white border-t border-borderColor pt-4 pb-4">
         © All Right Reserved |{" "}
         <Link
           href="https://www.mediatechtemple.com/web-design-and-development-services/"

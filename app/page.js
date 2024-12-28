@@ -3,10 +3,10 @@ import React from "react";
 import JobSlider from "@/components/home/job-slider";
 import CategoryList from "@/components/home/goverment-job-category";
 
-import JobLink from "@/components/home/job-links";
 import Content from "@/components/home/content";
 import StudyMaterial from "@/components/home/study-metarial";
 import FAQSection from "@/components/home/faq";
+import JobLinks from "@/components/home/job-links";
 
 const Home = () => {
   return (
@@ -20,16 +20,20 @@ const Home = () => {
       <CategoryList />
 
       {/* Job List */}
-      <JobLink />
+      <JobLinks />
       {/* study material */}
       <StudyMaterial />
-      <div className="border border-border-color p-2">
+      <div className="border border-borderColor p-2">
         {/* conent  */}
 
         <Content />
 
         {/* faq section */}
-        <FAQSection />
+        <FAQSection
+          headingText={
+            "Some Important Questions That Students Search about Sarkari Naukri"
+          }
+        />
       </div>
     </div>
   );
