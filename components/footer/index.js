@@ -7,6 +7,7 @@ import {
   RiArrowUpLine,
 } from "react-icons/ri";
 import { FaTelegramPlane } from "react-icons/fa";
+import Image from "next/image";
 
 const Footer = () => {
   return (
@@ -68,10 +69,18 @@ const Footer = () => {
           <h3 className="text-xl font-semibold mb-2">Contact Info</h3>
           <div className="h-0.5 bg-gray-300 w-16 mb-4"></div>
           <div className="flex items-center gap-4 mt-8">
-            <img className="w-9" src="images/mail.png" alt="Mail Icon" />
-            <img
+            <Image
+              width={10}
+              height={10}
+              className="w-9"
+              src="/images/mail.png"
+              alt="Mail Icon"
+            />
+            <Image
+              width={10}
+              height={10}
               className="w-9 md:hidden"
-              src="images/smartphone.png"
+              src="/images/smartphone.png"
               alt="Phone Icon"
             />
             <div className="">
@@ -85,9 +94,11 @@ const Footer = () => {
             </div>
           </div>
           <div className="flex items-center gap-4 mt-5">
-            <img
+            <Image
+              width={10}
+              height={10}
               className="w-9 hidden md:block"
-              src="images/smartphone.png"
+              src="/images/smartphone.png"
               alt="Phone Icon"
             />
             <div>

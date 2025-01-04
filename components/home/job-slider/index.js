@@ -7,7 +7,7 @@ const JobSlider = () => {
       <div className="w-full text-center mt-1">
         <Link
           href="#"
-          className="text-xs inline-block  font-medium text-linkColor sm:text-sm md:text-base lg:text-[20px] lg:mt-4 xl:text-[20px] xl:mt-2 2xl:text-[20px] 2xl:mt-4"
+          className="text-xs inline-block  font-medium text-linkcolor sm:text-sm md:text-base lg:text-[20px] lg:mt-4 xl:text-[20px] xl:mt-2 2xl:text-[20px] 2xl:mt-4"
         >
           www.sarkarinaukri.com
         </Link>
@@ -22,64 +22,64 @@ const JobSlider = () => {
 
       {/* Slider Section */}
       <div className="relative flex items-center overflow-hidden border-t border-b border-skyblue py-3 md:py-3 md:mt-3 xl:mt-8 mt-3 shadow-md">
-        <div className="w-full whitespace-nowrap animate-marquee space-x-4 text-linkColor">
+        <div className="w-full whitespace-nowrap animate-marquee space-x-4 text-linkcolor">
           <Link
             href="#"
-            className="inline-block text-xs md:text-sm font-semibold text-linkColor"
+            className="inline-block text-xs md:text-sm font-semibold text-linkcolor"
           >
             PM Internship Online Form 2024
           </Link>
-          <span className="text-xs md:text-sm text-linkColor font-semibold">
+          <span className="text-xs md:text-sm text-linkcolor font-semibold">
             |
           </span>
           <Link
             href="#"
-            className="inline-block text-xs md:text-sm text-linkColor font-semibold"
+            className="inline-block text-xs md:text-sm text-linkcolor font-semibold"
           >
             PM Internship Online Form 2024
           </Link>
-          <span className="text-xs md:text-sm text-linkColor font-semibold">
+          <span className="text-xs md:text-sm text-linkcolor font-semibold">
             |
           </span>
           <Link
             href="#"
-            className="inline-block text-xs md:text-sm text-linkColor font-semibold"
+            className="inline-block text-xs md:text-sm text-linkcolor font-semibold"
           >
             PM Internship Online Form 2024
           </Link>
-          <span className="text-xs md:text-sm text-linkColor font-semibold">
+          <span className="text-xs md:text-sm text-linkcolor font-semibold">
             |
           </span>
           <Link
             href="#"
-            className="inline-block text-xs md:text-sm text-linkColor font-semibold"
+            className="inline-block text-xs md:text-sm text-linkcolor font-semibold"
           >
             PM Internship Online Form 2024
           </Link>
-          <span className="text-xs md:text-sm text-linkColor font-semibold">
+          <span className="text-xs md:text-sm text-linkcolor font-semibold">
             |
           </span>
           <Link
             href="#"
-            className="inline-block text-xs md:text-sm text-linkColor font-semibold"
+            className="inline-block text-xs md:text-sm text-linkcolor font-semibold"
           >
             PM Internship Online Form 2024
           </Link>
-          <span className="text-xs md:text-sm text-linkColor font-semibold">
+          <span className="text-xs md:text-sm text-linkcolor font-semibold">
             |
           </span>
           <Link
             href="#"
-            className="inline-block text-xs md:text-sm text-linkColor font-semibold"
+            className="inline-block text-xs md:text-sm text-linkcolor font-semibold"
           >
             PM Internship Online Form 2024
           </Link>
-          <span className="text-xs md:text-sm text-linkColor font-semibold">
+          <span className="text-xs md:text-sm text-linkcolor font-semibold">
             |
           </span>
           <Link
             href="#"
-            className="inline-block text-xs md:text-sm text-linkColor font-semibold"
+            className="inline-block text-xs md:text-sm text-linkcolor font-semibold"
           >
             PM Internship Online Form 2024
           </Link>

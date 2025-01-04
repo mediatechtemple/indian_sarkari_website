@@ -1,10 +1,23 @@
+"use client";
+
 import { getData } from "@/utils";
 import Link from "next/link";
-import React from "react";
+import React, { useEffect, useState } from "react";
 import { RiCircleFill } from "react-icons/ri";
 
-const LatestGovtResult = async () => {
-  const resultData = await getData("/jobupdate/get/results");
+const LatestGovtResult = () => {
+  //const resultData = await getData("/jobupdate/get/results");
+  const [data, setData] = useState([]);
+  useEffect(() => {
+    (async () => {
+      try {
+        const response = await getData("/jobupdate/get/results");
+        setData(response || []);
+      } catch (error) {
+        console.error("Error fetching LatestGovtVacancy data:", error);
+      }
+    })();
+  }, []);
 
   return (
     <div className="lg:p-4 sm:p-4 p-2">
@@ -24,15 +37,15 @@ const LatestGovtResult = async () => {
       {/* Content Section */}
       <div className="p-2 border border-skyblue w-full relative right-1">
         <ul className="text-xs lg:text-base">
-          {resultData &&
-            resultData?.length > 0 &&
-            resultData?.map((item, index) => (
+          {data &&
+            data?.length > 0 &&
+            data?.map((item, index) => (
               <li key={index} className="flex items-center gap-2">
                 <RiCircleFill size={6} className="text-skyblue" />
                 <Link
                   href={`/result?/slug=${item?.job?.slug}&&name=${item?.resultUrl}&&id=${item?.id}`}
                   target="_blank"
-                  className="text-linkColor  hover:underline"
+                  className="text-linkcolor  hover:underline"
                 >
                   {item?.resultUrl}
                 </Link>

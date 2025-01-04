@@ -16,7 +16,7 @@ const Header = () => {
           </Link>
           <div>
             <Link href="/">
-              <h4 className="font-poppin text-[20px] lg:text-[26px] font-semibold text-darkbule mt-1">
+              <h4 className="font-poppin text-[20px] lg:text-[26px] font-semibold text-darkbule ">
                 INDIA SARKARI NAUKRI
               </h4>
             </Link>
@@ -42,7 +42,7 @@ const Header = () => {
         {menuItems.map((menuItem, index) => (
           <div key={index} className="relative group">
             <div
-              className={` py-2 font-medium border-r border-textColor px-[7px] sm:text-[8px] sm:p-[10px] md:text-[10px] md:font-medium md:py-3 lg:text-[12px] xl:px-5 lg:py-4  ${
+              className={` py-2 text-[5px] font-medium border-r border-textColor px-[7px] sm:text-[8px] sm:p-[10px] md:text-[10px] md:font-medium md:py-3 lg:text-[12px] xl:px-5 lg:py-4  ${
                 index === menuItems.length - 1 ? "last:border-r-0" : ""
               }`}
             >

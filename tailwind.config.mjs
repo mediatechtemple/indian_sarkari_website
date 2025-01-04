@@ -8,13 +8,23 @@ export default {
   ],
   theme: {
     extend: {
+      animation: {
+        "slow-spin": "spin 3s linear infinite",
+        "slow-spin-reverse": "spin-reverse 3s linear infinite",
+      },
+      keyframes: {
+        "spin-reverse": {
+          from: { transform: "rotate(0deg)" },
+          to: { transform: "rotate(-360deg)" },
+        },
+      },
       colors: {
         background: "hsl(var(--background))",
         foreground: "hsl(var(--foreground))",
         skyblue: "#5EB5D3",
         darkbule: "#172F5F",
         textColor: "#ffffff",
-        linkColor: "#0800EE",
+        linkcolor: "#0800EE",
         borderColor: "#A9DBED",
         darkSkyBlue: "#4682B4",
         darkSkyBlue2: "#2C598E",

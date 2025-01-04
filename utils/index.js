@@ -179,7 +179,7 @@ export const contentData = [
             8. Sarkari Naukri WhatsApp Group :{" "}
           </span>
           Join our{" "}
-          <a className="text-linkColor underline" href="#">
+          <a className="text-linkcolor underline" href="#">
             Sarkari Naukri WhatsApp Group Link
           </a>{" "}
           to get the latest Sarkari Naukri notifications.
@@ -190,7 +190,7 @@ export const contentData = [
             9. Telegram Channel :{" "}
           </span>
           We also have a{" "}
-          <a className="text-linkColor underline" href="#">
+          <a className="text-linkcolor underline" href="#">
             Telegram channel
           </a>{" "}
           for students where we update the latest notifications and also post
@@ -204,7 +204,7 @@ export const contentData = [
     content: (
       <p className="text-xs leading-relaxed sm:text-sm md:text-sm md:leading-6 lg:text-base lg:leading:7">
         Getting a government job is a big deal, and
-        <a className="text-linkColor underline" href="#">
+        <a className="text-linkcolor underline" href="#">
           India Sarkari Naukri.Com
         </a>
         is here to help you succeed. Whether you just finished school, have
@@ -329,7 +329,7 @@ export const contentData = [
         </p>
         <p className="text-xs mt-3 leading-relaxed sm:text-sm md:text-sm md:leading-6 lg:text-base lg:leading:7">
           Start your journey towards a great career. Check out the many
-          <a className="text-linkColor underline" href="#">
+          <a className="text-linkcolor underline" href="#">
             latest govt vacancy
           </a>
           options available and make a choice that sets the foundation for your
@@ -337,7 +337,7 @@ export const contentData = [
         </p>
         <p className="text-xs mt-3 leading-relaxed sm:text-sm md:text-sm md:leading-6 lg:text-base lg:leading:7">
           Visit
-          <a className="text-linkColor underline" href="#">
+          <a className="text-linkcolor underline" href="#">
             www.Indiasarkarinaukri.com
           </a>
            to learn more about Sarkari Naukri and start a journey towards a
@@ -355,7 +355,7 @@ export const allJobContentData = [
       <>
         <p className="text-xs leading-relaxed sm:text-sm md:text-sm md:leading-6 lg:text-base lg:leading:7 lg:leading-7">
           India 
-          <Link className="text-linkColor underline" href="#">
+          <Link className="text-linkcolor underline" href="#">
             Sarkari Naukri.Com 
           </Link>
           is a Sarkari job portal for the latest govt Vacancy updates in India!
@@ -373,7 +373,7 @@ export const allJobContentData = [
           attractive pay scales, and various benefits. In this comprehensive
           guide, we will explore the latest Naukari Exam vacancies, including
           the 
-          <Link className="text-linkColor underline" href="#">
+          <Link className="text-linkcolor underline" href="#">
              Delhi Subordinate Services Selection Board (DSSSB)
           </Link>{" "}
           Vacancy, Staff Selection Commission (SSC) Delhi Police Constable
@@ -398,7 +398,7 @@ export const allJobContentData = [
         </p>
         <h5 className="text-xs mt-4 mb-1 text-black font-semibold  sm:text-sm md:text-base lg:text-base">
           Know more:{" "}
-          <a className="text-linkColor underline font-medium" href="#">
+          <a className="text-linkcolor underline font-medium" href="#">
             DSSSB Vacancy 2023
           </a>
         </h5>
@@ -486,7 +486,7 @@ export const allJobContentData = [
           At India Sarkari Naukri, we understand the importance of skill
           development and on-the-job training. That's why we provide timely
           updates on 
-          <Link className="text-linkColor underline" href="#">
+          <Link className="text-linkcolor underline" href="#">
             ITI Apprentice
           </Link>
            and Graduate Apprentice job openings across various industries. These
@@ -712,3 +712,48 @@ export const postData = async (endpoint, data) => {
     throw error;
   }
 };
+
+const categories = [
+  { name: "Govt. jobs", image: "images/Govt-Jobs.webp", path: "/govt-jobs" },
+  {
+    name: "Railway jobs",
+    image: "images/Railway_Jobs.webp",
+    path: "/railway-jobs",
+  },
+  { name: "Bank jobs", image: "images/Bank_Jobs.webp", path: "/bank-jobs" },
+  {
+    name: "Defence jobs",
+    image: "images/Defence_Jobs.webp",
+    path: "/defence-jobs",
+  },
+  {
+    name: "Postal jobs",
+    image: "images/Postal_Jobs.webp",
+    path: "/postal-jobs",
+  },
+  {
+    name: "Judicial jobs",
+    image: "images/Judicial_Jobs.webp",
+    path: "/judicial-jobs",
+  },
+  {
+    name: "Teaching jobs",
+    image: "images/Teaching_Faculty.webp",
+    path: "/teaching-jobs",
+  },
+  {
+    name: "Engineering",
+    image: "images/Engineering_Jobs.webp",
+    path: "/engineering-jobs",
+  },
+  {
+    name: "Clerical jobs",
+    image: "images/Clerical_Jobs.webp",
+    path: "/clerical-jobs",
+  },
+  {
+    name: "Medical Jobs",
+    image: "images/Medical_Biotech.webp",
+    path: "/medical-jobs",
+  },
+];

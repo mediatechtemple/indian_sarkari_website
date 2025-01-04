@@ -1,11 +1,25 @@
+"use client";
 import { getData } from "@/utils";
 import Link from "next/link";
-import React from "react";
+import React, { useEffect, useState } from "react";
 import { RiCircleFill } from "react-icons/ri";
 
-const LatestGovtAdmitCard = async () => {
-  const admitData = await getData("/jobupdate/get/admit-cards");
-  const linkData = admitData?.rows;
+const LatestGovtAdmitCard = () => {
+  //const admitData = await getData("/jobupdate/get/admit-cards");
+
+  const [data, setData] = useState([]);
+  useEffect(() => {
+    (async () => {
+      try {
+        const response = await getData("/jobupdate/get/admit-cards");
+        setData(response || []);
+      } catch (error) {
+        console.error("Error fetching LatestGovtVacancy data:", error);
+      }
+    })();
+  }, []);
+  const linkData = data?.rows;
+
   return (
     <div className="lg:p-4 sm:p-4 p-2">
       {" "}
@@ -34,7 +48,7 @@ const LatestGovtAdmitCard = async () => {
                 <Link
                   href={`/admit-card?/slug=${item?.job?.slug}&&name=${item?.admitCardUrl}&&id=${item?.id}`}
                   target="_blank"
-                  className="text-linkColor  hover:underline"
+                  className="text-linkcolor  hover:underline"
                 >
                   {item?.admitCardUrl}
                 </Link>

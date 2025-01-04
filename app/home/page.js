@@ -8,16 +8,20 @@ import MockTest from "@/components/component-types/mock-test";
 import { getData } from "@/utils";
 import { useSearchParams } from "next/navigation";
 import { useEffect, useState } from "react";
+import Loading from "../loading";
 
 const JobLinksAndCategory = () => {
   const searchParams = useSearchParams();
   const [data, setData] = useState({});
+  const [loading, setLoading] = useState(true);
   const id = searchParams.get("id");
   useEffect(() => {
     (async () => {
       try {
+        setLoading(true);
         const response = await getData(`/job/${id}`);
         setData(response);
+        setLoading(false);
       } catch (error) {
         console.error("Error fetching job data:", error);
         setError("Failed to load content.");
@@ -25,6 +29,9 @@ const JobLinksAndCategory = () => {
     })();
   }, []);
 
+  if (loading) {
+    return <Loading />;
+  }
   return (
     <div className="w-full flex justify-between gap-3 p-1 mt-5 lg:gap-8 md:gap-6 lg:mt-8">
       <div style={{ width: "70%" }}>
