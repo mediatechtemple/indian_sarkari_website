@@ -49,7 +49,7 @@ const AdmitCardLinksAndCategory = () => {
             <span className="text-xs sm:text-base lg:text-xl text-purple font-semibold">
               Post Date Update:{" "}
             </span>
-            {data?.job?.created_at
+            {data?.job?.created_at || data?.created_at
               ? new Date(data.created_at).toLocaleDateString("en-GB", {
                   day: "2-digit",
                   month: "long",
@@ -61,11 +61,13 @@ const AdmitCardLinksAndCategory = () => {
             <span className="text-xs sm:text-base lg:text-xl text-purple font-semibold">
               Short Information:{" "}
             </span>
-            {data?.job?.description}
+            {data?.job?.description || data?.description}
           </h5>
           <div
             className="responsive-content mt-4"
-            dangerouslySetInnerHTML={{ __html: data?.job?.content || "" }}
+            dangerouslySetInnerHTML={{
+              __html: data?.job?.content || data?.content,
+            }}
           />
         </div>
       </div>

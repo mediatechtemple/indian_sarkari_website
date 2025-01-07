@@ -104,3 +104,28 @@ body {
 .responsive-content table {
   width: 100% !important;
 }
+
+.responsive-content h2 {
+  background-color: aqua !important;
+  color: whitesmoke;
+}
+
+/* Ensure correct media query syntax */
+@media (max-width: 768px) {
+  .responsive-content table {
+    width: 100% !important; /* Ensure the table takes full width */
+    table-layout: auto !important; /* Optional: allow the table to auto-resize */
+    border-collapse: collapse; /* Optional: improve appearance */
+  }
+
+  .responsive-content table th,
+  .responsive-content table td {
+    padding: 8px; /* Optional: adjust padding for smaller screens */
+    text-align: left; /* Optional: adjust text alignment */
+  }
+
+  /* Optional: If you want to make the table scrollable horizontally */
+  .responsive-content {
+    overflow-x: auto;
+  }
+}

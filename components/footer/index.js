@@ -1,3 +1,4 @@
+"use client";
 import Link from "next/link";
 import {
   RiFacebookFill,
@@ -8,58 +9,63 @@ import {
 } from "react-icons/ri";
 import { FaTelegramPlane } from "react-icons/fa";
 import Image from "next/image";
+import { useEffect, useState } from "react";
+import { apiurl, getData } from "@/utils";
+import Loading from "@/app/loading";
 
 const Footer = () => {
+  const [data, setData] = useState([]);
+  const [loading, setLoading] = useState(false);
+  useEffect(() => {
+    (async () => {
+      try {
+        setLoading(true);
+        const response = await getData("/generate");
+        setData(response?.rows);
+      } catch (error) {
+        console.log("error in social media icons", error);
+      } finally {
+        setLoading(false);
+      }
+    })();
+  }, []);
+
+  if (loading) {
+    return <Loading />;
+  }
   return (
     <div className="bg-darkbule text-white">
       {/* Scroll-to-top Button */}
-      <button className="hidden lg:flex lg:fixed lg:right-16 lg:bottom-6 lg:w-14 lg:h-14 lg:bg-skyblue lg:rounded-full lg:items-center lg:justify-center">
+      <button
+        onClick={() => window.scrollTo({ top: 0, behavior: "smooth" })}
+        className="hidden lg:flex lg:fixed lg:right-16 lg:bottom-6 lg:w-14 lg:h-14 lg:bg-skyblue lg:rounded-full lg:items-center lg:justify-center"
+      >
         <RiArrowUpLine className="text-white text-xl" />
       </button>
 
       {/* Social Media Icons */}
-      <div className="hidden lg:block lg:fixed lg:top-[380px] lg:left-[110px]">
+      <div className="hidden lg:block lg:fixed lg:top-[280px] lg:left-[110px]">
         <ul className="hidden lg:flex lg:flex-col lg:space-y-4">
-          <li>
-            <Link
-              className="w-12 h-12 flex items-center justify-center rounded-full bg-blue-600"
-              href="#"
-            >
-              <RiFacebookFill className="text-2xl text-white" />
-            </Link>
-          </li>
-          <li>
-            <Link
-              className="w-12 h-12 flex items-center justify-center rounded-full bg-rose-500"
-              href="#"
-            >
-              <RiInstagramLine className="text-2xl text-white" />
-            </Link>
-          </li>
-          <li>
-            <Link
-              className="w-12 h-12 flex items-center justify-center rounded-full bg-green-400"
-              href="#"
-            >
-              <RiWhatsappLine className="text-2xl text-white" />
-            </Link>
-          </li>
-          <li>
-            <Link
-              className="w-12 h-12 flex items-center justify-center rounded-full bg-red-500"
-              href="#"
-            >
-              <RiYoutubeLine className="text-2xl text-white" />
-            </Link>
-          </li>
-          <li>
-            <Link
-              className="w-12 h-12 flex items-center justify-center rounded-full bg-sky-400"
-              href="#"
-            >
-              <FaTelegramPlane className="text-2xl text-white" />
-            </Link>
-          </li>
+          {data && data.length > 0 ? (
+            data.map((item) => (
+              <li key={item?.id}>
+                <Link
+                  className="w-12 h-12 flex items-center justify-center rounded-full bg-blue-600"
+                  href={item?.url}
+                  target="_blank"
+                >
+                  <Image
+                    src={`${apiurl}/${item?.socialIcon}`}
+                    alt={item?.platformName}
+                    width={96}
+                    height={96}
+                  />
+                </Link>
+              </li>
+            ))
+          ) : (
+            <div>No Icons</div>
+          )}
         </ul>
       </div>
 

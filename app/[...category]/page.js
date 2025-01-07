@@ -12,35 +12,40 @@ import AllJobContent from "@/components/home/content/all-job-content";
 import AccordionItem from "@/components/home/faq/accordionItem";
 import { RiCircleFill } from "react-icons/ri";
 import Link from "next/link";
+import Loading from "../loading";
 
-const CategoryPage = ({ params }) => {
+const CategoryPage = () => {
   const { category } = useParams(); // Get the category name from the URL
   //console.log(category[1]);
   const [jobData, setJobData] = useState([]);
+  const [loading, setLoading] = useState(false);
 
   useEffect(() => {
     if (!category) return;
 
     (async () => {
       try {
+        setLoading(true);
         const response = await getData(`/job/category/${category[1]}`);
         setJobData(response || []);
+        setLoading(false);
       } catch (error) {
         console.error("Error fetching job data:", error);
       }
     })();
   }, [category]);
-  console.log(jobData);
-
+  if (loading) {
+    return <Loading />;
+  }
   return (
     <div className="w-full">
       <h3 className="text-base text-center mt-3 sm:text-xl sm:mt-8  sm:mb-3 lg:text-2xl lg:mt-8 lg:mb-4 text-skyblue font-semibold">
-        {category ? category : "All"} Government job
+        All Government job
       </h3>
       <div className="w-full flex justify-between gap-3 py-1 mt-5 lg:gap-8 md:gap-6 lg:mt-8">
         <div className="border border-borderColor w-9/12">
           <div className="bg-skyblue text-white text-center text-base font-medium p-4 md:text-xl lg:text-2xl">
-            Latest {category ? category : "Govt."} Vacancy
+            Latest Govt Vacancy
           </div>
 
           <ul className="p-4 space-y-5">
@@ -51,7 +56,8 @@ const CategoryPage = ({ params }) => {
                   <li key={index} className="flex items-center gap-2">
                     <RiCircleFill size={6} className="text-skyblue" />
                     <Link
-                      href={`/home?/slug=${item.slug}&&name=${item.jobUrl}&&id=${item.id}`}
+                      //href={`/home?/slug=${item.slug}&&name=${item.jobUrl}&&id=${item.id}`}
+                      href={`/${item.slug}`}
                       target="_blank"
                       className="text-linkcolor  hover:underline"
                     >
