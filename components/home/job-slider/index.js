@@ -1,6 +1,7 @@
 import Link from "next/link";
 
 const JobSlider = () => {
+  //
   return (
     <div className="w-full">
       {/* Website Link */}
