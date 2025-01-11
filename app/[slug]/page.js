@@ -13,29 +13,34 @@ import Loading from "../loading";
 const JobLinksAndCategory = () => {
   const [data, setData] = useState({});
   const [loading, setLoading] = useState(true);
-  const [slugChanged, setSlugChanged] = useState(false);
-
+  const [updateData, setUpdateData] = useState({});
   const { slug } = useParams();
-
   useEffect(() => {
-    if (!slug || slugChanged) return;
+    if (!slug) return;
     (async () => {
       try {
         setLoading(true);
-        const response = await getData(`/job/slug/${slug}`);
+        // const response = await getData(`/job/slug/${slug}`);
+        const [response, updateResponse] = await Promise.all([
+          getData(`/job/slug/${slug}`),
+          // getData(`/jobupdate/slug/${slug}`),
+        ]);
         setData(response);
-        setLoading(false);
-        setSlugChanged(true);
+        setUpdateData(updateResponse);
       } catch (error) {
         console.error("Error fetching job data:", error);
         setError("Failed to load content.");
+      } finally {
+        setLoading(false);
       }
     })();
-  }, [slug, slugChanged]);
+  }, [slug]);
 
   if (loading) {
     return <Loading />;
   }
+
+  console.log(JSON.parse(data.content).join(""));
   return (
     <div className="w-full flex justify-between gap-3 p-1 mt-5 lg:gap-8 md:gap-6 lg:mt-8">
       <div style={{ width: "70%" }}>
@@ -51,7 +56,7 @@ const JobLinksAndCategory = () => {
               Post Date Update:{" "}
             </span>
             {data?.created_at
-              ? new Date(data.created_at).toLocaleDateString("en-GB", {
+              ? new Date(data?.created_at).toLocaleDateString("en-GB", {
                   day: "2-digit",
                   month: "long",
                   year: "numeric",
@@ -66,7 +71,9 @@ const JobLinksAndCategory = () => {
           </h5>
           <div
             className="responsive-content mt-4"
-            dangerouslySetInnerHTML={{ __html: data.content || "" }}
+            dangerouslySetInnerHTML={{
+              __html: JSON.parse(data.content).join("") || "",
+            }}
           />
         </div>
       </div>

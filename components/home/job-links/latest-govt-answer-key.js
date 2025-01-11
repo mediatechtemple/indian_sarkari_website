@@ -40,11 +40,12 @@ const LatestAnswerKeyVacancy = () => {
               <li key={index} className="flex items-center gap-2">
                 <RiCircleFill size={6} className="text-skyblue" />
                 <Link
-                  href={`/answer-key?/slug=${item.slug}&&name=${item.answerKeyUrl}&&id=${item.id}`}
+                  href={`${item?.job?.slug || item?.slug}`}
+                  //href={`/answer-key?/slug=${item.slug}&&name=${item.answerKeyUrl}&&id=${item.id}`}
                   target="_blank"
                   className="text-linkcolor  hover:underline"
                 >
-                  {item.answerKeyUrl}
+                  {item.job?.slug}
                 </Link>
               </li>
             ))}
@@ -52,7 +53,7 @@ const LatestAnswerKeyVacancy = () => {
         <div className="flex justify-end mr-4 my-2">
           <Link
             className="text-base text-darkblue font-semibold lg:text-lg"
-            href="#"
+            href="latest-vacancy?type=answerKeys"
           >
             View More
           </Link>

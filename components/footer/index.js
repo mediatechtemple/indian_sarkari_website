@@ -71,7 +71,7 @@ const Footer = () => {
 
       <div className="grid grid-cols-2 sm:grid-cols-2 lg:grid-cols-4 gap-8 py-8 px-4">
         {/* Contact Info */}
-        <div className="">
+        {/* <div className="">
           <h3 className="text-xl font-semibold mb-2">Contact Info</h3>
           <div className="h-0.5 bg-gray-300 w-16 mb-4"></div>
           <div className="flex items-center gap-4 mt-8">
@@ -110,23 +110,48 @@ const Footer = () => {
             <div>
               <h5>Socials Network</h5>
               <div className="flex mt-2 space-x-4">
-                <Link href="#">
+                <Link href="https://www.facebook.com/" target="_blank">
                   <RiFacebookFill className="hover:text-skyblue duration-300 w-6 h-6" />
                 </Link>
-                <Link href="#">
+                <Link href="https://web.whatsapp.com/" target="_blank">
                   <RiWhatsappLine className="hover:text-skyblue duration-300 w-6 h-6" />
                 </Link>
-                <Link href="#">
+                <Link href="https://www.instagram.com/" target="_blank">
                   <RiInstagramLine className="hover:text-skyblue duration-300 w-6 h-6" />
                 </Link>
-                <Link href="#">
+                <Link href="https://web.telegram.org/" target="_blank">
                   <FaTelegramPlane className="hover:text-skyblue duration-300 w-6 h-6" />
                 </Link>
-                <Link href="#">
+                <Link href="https://www.youtube.com/" target="_blank">
                   <RiYoutubeLine className="hover:text-skyblue duration-300 w-6 h-6" />
                 </Link>
               </div>
             </div>
+          </div>
+        </div> */}
+        <div className="mt-10">
+          <Image
+            src="/images/logo.png"
+            alt="Logo"
+            width={96}
+            height={96}
+            className="bg-white"
+          />
+
+          <div>
+            <h4 className=" font-poppin text-[20px] lg:text-[26px] font-semibold text-white md:whitespace-nowrap">
+              INDIA SARKARI NAUKRI
+            </h4>
+
+            <span className="text-[16px] font-medium text-skyblue md:whitespace-nowrap">
+              Sarkari Naukri Website
+            </span>
+            <Link
+              href="/privacy"
+              className="hover:text-skyblue duration-300 p-6"
+            >
+              Author
+            </Link>
           </div>
         </div>
 
@@ -142,18 +167,24 @@ const Footer = () => {
                 </Link>
               </li>
               <li>
-                <Link href="#" className="hover:text-skyblue duration-300">
+                <Link
+                  href="/privacy"
+                  className="hover:text-skyblue duration-300"
+                >
                   Privacy Policy
                 </Link>
               </li>
               <li>
-                <Link href="#" className="hover:text-skyblue duration-300">
+                <Link
+                  href="/privacy/termss"
+                  className="hover:text-skyblue duration-300"
+                >
                   Terms & Condition
                 </Link>
               </li>
               <li>
                 <Link href="#" className="hover:text-skyblue duration-300">
-                  Refund Policy
+                  Advertise With Us
                 </Link>
               </li>
             </ul>
@@ -166,17 +197,26 @@ const Footer = () => {
           <div className="h-0.5 bg-gray-300 w-16 mb-4"></div>
           <ul className="space-y-5 mt-8">
             <li>
-              <Link href="#" className="hover:text-blue-300">
+              <Link
+                href="latest-vacancy?type=admitCards"
+                className="hover:text-blue-300"
+              >
                 Admit Card
               </Link>
             </li>
             <li>
-              <Link href="#" className="hover:text-blue-300">
+              <Link
+                href="latest-vacancy?type=results"
+                className="hover:text-blue-300"
+              >
                 Exam Results
               </Link>
             </li>
             <li>
-              <Link href="#" className="hover:text-blue-300">
+              <Link
+                href="latest-vacancy?type=answerKeys"
+                className="hover:text-blue-300"
+              >
                 Exam Answer Key
               </Link>
             </li>
@@ -194,7 +234,10 @@ const Footer = () => {
           <div className="h-0.5 bg-gray-300 w-16 mb-4"></div>
           <ul className="space-y-5 mt-8">
             <li>
-              <Link href="#" className="hover:text-blue-300">
+              <Link
+                href="latest-vacancy?type=jobs"
+                className="hover:text-blue-300"
+              >
                 Latest Jobs
               </Link>
             </li>
@@ -219,8 +262,8 @@ const Footer = () => {
 
       {/* Copyright */}
       <div className="mt-2 text-center text-sm p-4 lg:text-base text-white border-t border-borderColor pt-4 pb-4">
-        © All Right Reserved |{" "}
-        <Link
+        {/* © All Right Reserved | */}© All Rights Reserved to
+        {/* <Link
           href="https://www.mediatechtemple.com/web-design-and-development-services/"
           className="text-skyblue"
           target="_blank"
@@ -235,6 +278,15 @@ const Footer = () => {
           title="Media Tech Temple"
         >
           Media Tech Temple
+        </Link> */}
+        <Link
+          href="https://mediatechtemple.com/"
+          className="text-skyblue"
+          target="_blank"
+          title="Media Tech Temple"
+        >
+          {" "}
+          MediaTechTemple
         </Link>
       </div>
     </div>

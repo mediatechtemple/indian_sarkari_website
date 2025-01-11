@@ -1,4 +1,5 @@
 "use client";
+import Loading from "@/app/loading";
 import { getData } from "@/utils";
 import Link from "next/link";
 import React, { useEffect, useState } from "react";
@@ -16,8 +17,9 @@ const LatestGovtVacancy = () => {
       }
     })();
   }, []);
-  //const data = await getData("/job");
-  const linkData = data?.rows;
+
+  const linkData = data?.rows?.slice(0, 10) || data;
+
   return (
     <div className="lg:p-4 sm:p-4 p-2">
       {" "}
@@ -35,7 +37,6 @@ const LatestGovtVacancy = () => {
         <ul className="space-y-3 text-xs lg:text-base">
           {linkData &&
             linkData?.length > 0 &&
-            linkData?.length < 20 &&
             linkData?.map((item, index) => (
               <li key={index} className="flex items-center gap-2">
                 <RiCircleFill size={6} className="text-skyblue" />
@@ -45,7 +46,7 @@ const LatestGovtVacancy = () => {
                   target="_blank"
                   className="text-linkcolor  hover:underline"
                 >
-                  {item.jobUrl}
+                  {item.slug}
                 </Link>
               </li>
             ))}
@@ -53,7 +54,7 @@ const LatestGovtVacancy = () => {
         <div className="flex justify-end mr-4 my-2">
           <Link
             className="text-base text-darkblue font-semibold lg:text-lg"
-            href="all-job"
+            href="latest-vacancy?type=jobs"
           >
             View More
           </Link>

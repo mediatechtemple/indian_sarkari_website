@@ -5,8 +5,6 @@ import React, { useEffect, useState } from "react";
 import { RiCircleFill } from "react-icons/ri";
 
 const LatestGovtAdmitCard = () => {
-  //const admitData = await getData("/jobupdate/get/admit-cards");
-
   const [data, setData] = useState([]);
   useEffect(() => {
     (async () => {
@@ -18,7 +16,8 @@ const LatestGovtAdmitCard = () => {
       }
     })();
   }, []);
-  const linkData = data?.rows;
+  const linkData = data?.rows?.slice(0, 10);
+  console.log(linkData);
 
   return (
     <div className="lg:p-4 sm:p-4 p-2">
@@ -46,11 +45,12 @@ const LatestGovtAdmitCard = () => {
               <li key={index} className="flex items-center gap-2">
                 <RiCircleFill size={6} className="text-skyblue" />
                 <Link
-                  href={`/admit-card?/slug=${item?.job?.slug}&&name=${item?.admitCardUrl}&&id=${item?.id}`}
+                  href={`${item?.job?.slug || item?.slug}`}
+                  //href={`/admit-card?/slug=${item?.job?.slug}&&name=${item?.admitCardUrl}&&id=${item?.id}`}
                   target="_blank"
                   className="text-linkcolor  hover:underline"
                 >
-                  {item?.admitCardUrl}
+                  {item?.job?.slug}
                 </Link>
               </li>
             ))}
@@ -58,7 +58,7 @@ const LatestGovtAdmitCard = () => {
         <div className="flex justify-end mr-4 my-2">
           <Link
             className="text-base text-darkblue font-semibold lg:text-lg"
-            href="#"
+            href="latest-vacancy?type=admitCards"
           >
             View More
           </Link>

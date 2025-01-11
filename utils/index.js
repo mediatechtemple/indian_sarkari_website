@@ -631,6 +631,7 @@ export const allJobFaqs = [
 ];
 
 export const apiurl = "https://newindiansarkari-production.up.railway.app";
+export const oldApiUrl = "http://206.189.131.16";
 
 export const deleteData = async (endpoint) => {
   try {
@@ -676,11 +677,25 @@ export const putData = async (endpoint, data) => {
   }
 };
 
+// export const getData = async (endpoint) => {
+//   try {
+//     const response = await fetch(`${apiurl}${endpoint} || ${oldApiUrl}${endpoint}`);
+//     if (!response.ok) {
+//       // throw new Error(`Failed to fetch: ${response.statusText}`);
+//     }
+//     return await response.json();
+//   } catch (error) {
+//     console.error("API Error:", error);
+//     //throw error;
+//   }
+// };
 export const getData = async (endpoint) => {
   try {
-    const response = await fetch(`${apiurl}${endpoint}`);
+    const response = await fetch(
+      `${oldApiUrl}${endpoint}` || `${apiurl}${endpoint}`
+    );
     if (!response.ok) {
-      // throw new Error(`Failed to fetch: ${response.statusText}`);
+      throw new Error(`Failed to fetch: ${response.statusText}`);
     }
     return await response.json();
   } catch (error) {

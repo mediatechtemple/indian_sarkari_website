@@ -9,50 +9,90 @@ import AllJobContent from "@/components/home/content/all-job-content";
 import AccordionItem from "@/components/home/faq/accordionItem";
 import { allJobFaqs, getData } from "@/utils";
 import Link from "next/link";
-import { useSearchParams } from "next/navigation";
 import React, { useEffect, useState } from "react";
 import { RiCircleFill } from "react-icons/ri";
 import Loading from "../loading";
+import { useSearchParams } from "next/navigation";
 
 const AllLatestJob = () => {
   const searchParams = useSearchParams();
+  const type = searchParams.get("type");
+  // const searchQuery = searchParams.get("search") || "";
   const [jobData, setJobData] = useState([]);
-  const [category, setCategory] = useState("");
+  const [admitCardData, setAdmitCardData] = useState([]);
+  const [answerKeyData, setAnswerKeyData] = useState([]);
+  const [resultData, setResultData] = useState([]);
   const [loading, setLoading] = useState(true);
-
   useEffect(() => {
-    console.log(searchParams.get("category"), searchParams.get("id"));
-    setCategory(searchParams.get("category"));
-
     const fetchData = async () => {
       try {
         setLoading(true);
-        if (
-          searchParams.get("id") != undefined ||
-          searchParams.get("id") != null
-        ) {
-          const response = await getData(
-            `/job/category/${searchParams.get("id")}`
-          );
-          setJobData(response);
-        } else {
-          const response = await getData("/job");
-          setJobData(response.rows);
-        }
+
+        const [
+          jobResponse,
+          admitCardResponse,
+          answerKeyResponse,
+          resultResponse,
+        ] = await Promise.all([
+          getData("/job"),
+          getData("/jobupdate/get/admit-cards"),
+          getData("/jobupdate/get/answer-keys"),
+          getData("/jobupdate/get/results"),
+        ]);
+
+        setJobData(jobResponse.rows || []);
+        setAdmitCardData(admitCardResponse.rows || []);
+        setAnswerKeyData(answerKeyResponse || []);
+        setResultData(resultResponse || []);
+
         setLoading(false);
       } catch (error) {
         console.error("Error fetching data:", error);
       }
     };
+
     fetchData();
   }, []);
   if (loading) {
     return <Loading />;
   }
+  let dataToShow = [];
+  let headerText = "";
+
+  switch (type) {
+    case "jobs":
+      dataToShow = jobData;
+      headerText = "All Government Jobs";
+      break;
+    case "admitCards":
+      dataToShow = admitCardData;
+      headerText = "All Admit Cards";
+      break;
+    case "answerKeys":
+      dataToShow = answerKeyData;
+      headerText = "All Answer Keys";
+      break;
+    case "results":
+      dataToShow = resultData;
+      headerText = "All Results";
+      break;
+    default:
+      dataToShow = [];
+      headerText = "No Data Available";
+  }
+  // if (searchQuery) {
+  //   dataToShow = dataToShow.filter((item) => {
+  //     const fieldToSearch =
+  //       item.jobUrl || item.admitCardUrl || item.answerKeyUrl || item.resultUrl;
+
+  //     return fieldToSearch?.toLowerCase().includes(searchQuery.toLowerCase());
+  //   });
+  //   console.log(dataToShow);
+  // }
   return (
     <div className="w-full">
       <h3 className="text-base text-center mt-3 sm:text-xl sm:mt-8  sm:mb-3 lg:text-2xl lg:mt-8 lg:mb-4 text-skyblue font-semibold">
-        All Government job
+        {headerText}
       </h3>
       <div className="w-full flex justify-between gap-3 py-1 mt-5 lg:gap-8 md:gap-6 lg:mt-8">
         <div className="border border-borderColor w-9/12">
@@ -62,24 +102,33 @@ const AllLatestJob = () => {
 
           <ul className="p-4 space-y-5">
             <ul className="space-y-3 text-xs lg:text-base">
-              {jobData &&
-                jobData?.length > 0 &&
-                jobData?.map((item, index) => (
+              {dataToShow.length > 0 ? (
+                dataToShow.map((item, index) => (
                   <li key={index} className="flex items-center gap-2">
                     <RiCircleFill size={6} className="text-skyblue" />
                     <Link
-                      // href={`/home?/slug=${item.slug}&&name=${item.jobUrl}&&id=${item.id}`}
-                      href={`${item.slug}`}
+                      href={item.slug || "#"}
                       target="_blank"
-                      className="text-linkcolor  hover:underline"
+                      className="text-linkcolor hover:underline"
                     >
-                      {item.jobUrl}
+                      {item.jobUrl ||
+                        item.slug ||
+                        item.admitCardUrl ||
+                        item.answerKeyUrl ||
+                        item.resultUrl}
                     </Link>
                   </li>
-                ))}
+                ))
+              ) : (
+                <div className="flex justify-center items-center">
+                  <h3 className="text-base text-skyblue font-medium">
+                    No data found
+                  </h3>
+                </div>
+              )}
             </ul>
           </ul>
-          {jobData?.length === 0 && (
+          {dataToShow.length === 0 && (
             <div className="flex justify-center items-center">
               <h3 className="text-base text-skyblue font-medium">
                 No data found

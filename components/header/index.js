@@ -1,10 +1,13 @@
-import React from "react";
+"use client";
+import React, { useState } from "react";
 import Image from "next/image";
 import Link from "next/link";
 import { RiSearchLine } from "react-icons/ri";
 import { menuItems } from "@/utils";
 
 const Header = () => {
+  const [searchValue, setSearchValue] = useState("");
+
   return (
     <header className="w-full max-w-6xl m-auto">
       {/* Top Header */}
@@ -28,13 +31,23 @@ const Header = () => {
           </div>
         </div>
         {/* Search Bar */}
-        <div className="relative flex mt-3 sm:mt-0 items-center w-full sm:w-auto">
-          <input
-            className="w-full sm:w-[300px] border border-[#A9DBED] py-2 px-2 rounded-3xl placeholder:text-sm placeholder:text-darkbule focus:outline-none"
-            type="text"
-            placeholder="Search..."
-          />
-          <RiSearchLine className="absolute right-4 top-1/2 transform -translate-y-1/2 text-darkbule" />
+        <div className="flex items-center mt-3 sm:mt-0 w-full sm:w-auto">
+          <div className="relative flex items-center w-full sm:w-[300px]">
+            <input
+              className="w-full border border-[#A9DBED] py-2 px-4 rounded-l-3xl focus:outline-none placeholder:text-sm placeholder:text-darkbule"
+              type="text"
+              placeholder="Search..."
+              value={searchValue || ""}
+              onChange={(e) => setSearchValue(e.target.value)}
+            />
+            <Link
+              href={`/search?keyword=${encodeURIComponent(searchValue)}`}
+              onClick={() => setSearchValue("")}
+              className="py-3 px-4 bg-skyblue text-white font-medium rounded-r-3xl hover:bg-[#68bce3] transition-all"
+            >
+              <RiSearchLine className="text-lg" />
+            </Link>
+          </div>
         </div>
       </div>
       {/* Menu */}
