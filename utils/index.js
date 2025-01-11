@@ -631,7 +631,7 @@ export const allJobFaqs = [
 ];
 
 export const apiurl = "https://newindiansarkari-production.up.railway.app";
-export const oldApiUrl = "http://206.189.131.16";
+export const oldApiUrl = "https://backend.indiasarkarinaukri.com";
 
 export const deleteData = async (endpoint) => {
   try {
