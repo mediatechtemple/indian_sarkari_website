@@ -146,10 +146,7 @@ const Footer = () => {
             <span className="text-[16px] font-medium text-skyblue md:whitespace-nowrap">
               Sarkari Naukri Website
             </span>
-            <Link
-              href="/privacy"
-              className="hover:text-skyblue duration-300 p-6"
-            >
+            <Link href="/" className="hover:text-skyblue duration-300 p-6">
               Author
             </Link>
           </div>
