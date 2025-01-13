@@ -50,13 +50,19 @@ const SlugCategoryData = () => {
               Post Date Update:{" "}
             </span>
             {data?.created_at
-              ? new Date(
+              ? `${new Date(
                   data?.created_at || data?.job?.created_at
                 ).toLocaleDateString("en-GB", {
                   day: "2-digit",
-                  month: "long",
+                  month: "2-digit",
                   year: "numeric",
-                })
+                })} | ${new Date(
+                  data?.created_at || data?.job?.created_at
+                ).toLocaleTimeString("en-GB", {
+                  hour: "2-digit",
+                  minute: "2-digit",
+                  hour12: true,
+                })}`
               : "No date available"}
           </h5>
           <h5 className="text-xs font-medium sm:text-sm lg:text-base text-gray-800 mt-2 lg:mt-4">
