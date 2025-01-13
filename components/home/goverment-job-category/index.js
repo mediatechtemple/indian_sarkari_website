@@ -27,7 +27,7 @@ const CategoryList = () => {
             <CategoryBox
               key={category.id}
               name={category.name}
-              image={`https://newindiansarkari-production.up.railway.app/${category.categoryImg}`}
+              // image={`https://newindiansarkari-production.up.railway.app/${category.categoryImg}`}
               //path={`/all-job?category=${category.name}&&id=${category.id}`}
               path={`/${category.name}/${category.id}`}
             />
