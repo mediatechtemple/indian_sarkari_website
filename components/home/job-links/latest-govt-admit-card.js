@@ -17,7 +17,6 @@ const LatestGovtAdmitCard = () => {
     })();
   }, []);
   const linkData = data?.rows?.slice(0, 10);
-  console.log(linkData);
 
   return (
     <div className="lg:p-4 sm:p-4 p-2">
@@ -45,12 +44,15 @@ const LatestGovtAdmitCard = () => {
               <li key={index} className="flex items-center gap-2">
                 <RiCircleFill size={6} className="text-skyblue" />
                 <Link
-                  href={`${item?.job?.slug || item?.slug}`}
+                  // href={`${item?.job?.slug || item?.slug}`}
                   //href={`/admit-card?/slug=${item?.job?.slug}&&name=${item?.admitCardUrl}&&id=${item?.id}`}
+                  href={`/${item?.Category?.name}/${
+                    item?.slug || item?.job?.slug
+                  }`}
                   target="_blank"
                   className="text-linkcolor  hover:underline"
                 >
-                  {item?.job?.slug}
+                  {item?.admitCardUrl}
                 </Link>
               </li>
             ))}

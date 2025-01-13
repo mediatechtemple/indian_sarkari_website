@@ -13,20 +13,20 @@ import Loading from "../loading";
 const JobLinksAndCategory = () => {
   const [data, setData] = useState({});
   const [loading, setLoading] = useState(true);
-  const [updateData, setUpdateData] = useState({});
+  //const [updateData, setUpdateData] = useState({});
   const { slug } = useParams();
   useEffect(() => {
     if (!slug) return;
     (async () => {
       try {
         setLoading(true);
-        // const response = await getData(`/job/slug/${slug}`);
-        const [response, updateResponse] = await Promise.all([
-          getData(`/job/slug/${slug}`),
-          // getData(`/jobupdate/slug/${slug}`),
-        ]);
+        const response = await getData(`/job/slug/${slug}`);
+        // const [response, updateResponse] = await Promise.all([
+        //   getData(`/job/slug/${slug}`),
+        //   getData(`/jobupdate/slug/${slug}`),
+        // ]);
         setData(response);
-        setUpdateData(updateResponse);
+        //setUpdateData(updateResponse);
       } catch (error) {
         console.error("Error fetching job data:", error);
         setError("Failed to load content.");
@@ -40,7 +40,6 @@ const JobLinksAndCategory = () => {
     return <Loading />;
   }
 
-  console.log(JSON.parse(data.content).join(""));
   return (
     <div className="w-full flex justify-between gap-3 p-1 mt-5 lg:gap-8 md:gap-6 lg:mt-8">
       <div style={{ width: "70%" }}>
@@ -71,9 +70,10 @@ const JobLinksAndCategory = () => {
           </h5>
           <div
             className="responsive-content mt-4"
-            dangerouslySetInnerHTML={{
-              __html: JSON.parse(data.content).join("") || "",
-            }}
+            // dangerouslySetInnerHTML={{
+            //   __html: JSON.parse(data.content).join("") || "",
+            // }}
+            dangerouslySetInnerHTML={{ __html: data.content || "" }}
           />
         </div>
       </div>

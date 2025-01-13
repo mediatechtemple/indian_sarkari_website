@@ -630,8 +630,10 @@ export const allJobFaqs = [
   },
 ];
 
-export const apiurl = "https://newindiansarkari-production.up.railway.app";
-export const oldApiUrl = "https://backend.indiasarkarinaukri.com";
+//export const apiurl = "https://newindiansarkari-production.up.railway.app";
+export const apiurl = "https://backend.indiasarkarinaukri.com";
+//export const apiurl = "https://www.indiasarkarinaukri.com/wp-json/wp/v2/posts";
+//export const oldApiUrl = "https://backend.indiasarkarinaukri.com";
 
 export const deleteData = async (endpoint) => {
   try {
@@ -691,9 +693,7 @@ export const putData = async (endpoint, data) => {
 // };
 export const getData = async (endpoint) => {
   try {
-    const response = await fetch(
-      `${oldApiUrl}${endpoint}` || `${apiurl}${endpoint}`
-    );
+    const response = await fetch(`${apiurl}${endpoint}`);
     if (!response.ok) {
       throw new Error(`Failed to fetch: ${response.statusText}`);
     }

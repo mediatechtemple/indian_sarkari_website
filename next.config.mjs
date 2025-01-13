@@ -1,11 +1,11 @@
 /** @type {import('next').NextConfig} */
 const nextConfig = {
   images: {
-    domains: ["newindiansarkari-production.up.railway.app"],
+    domains: ["backend.indiasarkarinaukri.com"],
     remotePatterns: [
       {
         protocol: "https",
-        hostname: "newindiansarkari-production.up.railway.app",
+        hostname: "backend.indiasarkarinaukri.com",
         pathname: "/**",
       },
     ],

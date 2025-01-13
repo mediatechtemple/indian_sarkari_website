@@ -42,11 +42,12 @@ const LatestGovtVacancy = () => {
                 <RiCircleFill size={6} className="text-skyblue" />
                 <Link
                   //href={`/home?/slug=${item.slug}&&name=${item.jobUrl}&&id=${item.id}`}
-                  href={`${item.slug}`}
+                  //href={`${item.slug}`}
+                  href={`${item.Category.name}/${item.slug}`}
                   target="_blank"
                   className="text-linkcolor  hover:underline"
                 >
-                  {item.slug}
+                  {item.jobUrl}
                 </Link>
               </li>
             ))}

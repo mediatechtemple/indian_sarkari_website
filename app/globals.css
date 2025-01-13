@@ -106,8 +106,8 @@ body {
 }
 
 .responsive-content h2 {
-  background-color: aqua !important;
-  color: whitesmoke;
+  /* background-color: aqua !important;
+  color: whitesmoke; */
 }
 
 /* Ensure correct media query syntax */

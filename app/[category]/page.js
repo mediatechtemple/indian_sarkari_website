@@ -13,7 +13,6 @@ import AccordionItem from "@/components/home/faq/accordionItem";
 import { RiCircleFill } from "react-icons/ri";
 import Link from "next/link";
 import Loading from "../loading";
-
 const CategoryPage = () => {
   const { category } = useParams(); // Get the category name from the URL
   //console.log(category[1]);

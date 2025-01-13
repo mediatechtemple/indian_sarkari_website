@@ -44,12 +44,15 @@ const LatestGovtResult = () => {
               <li key={index} className="flex items-center gap-2">
                 <RiCircleFill size={6} className="text-skyblue" />
                 <Link
-                  href={`${item?.job?.slug || item?.slug}`}
+                  href={`/${item?.Category?.name}/${
+                    item?.slug || item?.job?.slug
+                  }`}
+                  // href={`${item?.job?.slug || item?.slug}`}
                   //href={`/result?/slug=${item?.job?.slug}&&name=${item?.resultUrl}&&id=${item?.id}`}
                   target="_blank"
                   className="text-linkcolor  hover:underline"
                 >
-                  {item?.job?.slug}
+                  {item?.resultUrl}
                 </Link>
               </li>
             ))}
