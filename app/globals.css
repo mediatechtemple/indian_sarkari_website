@@ -105,9 +105,14 @@ body {
   width: 100% !important;
 }
 
-.responsive-content h2 {
-  /* background-color: aqua !important;
-  color: whitesmoke; */
+.responsive-content > h2 {
+  text-align: center;
+  margin: 10px !important;
+  padding: 10px !important;
+  background-color: #20b7d5 !important;
+  box-shadow: rgba(23, 43, 99, 0.3) 0 7px 28px;
+  border-radius: 10px;
+  color: whitesmoke;
 }
 
 /* Ensure correct media query syntax */

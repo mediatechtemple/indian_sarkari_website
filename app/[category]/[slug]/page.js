@@ -13,6 +13,7 @@ import Loading from "@/app/loading";
 const SlugCategoryData = () => {
   const [data, setData] = useState({});
   const [loading, setLoading] = useState(true);
+  const [updateData, setUpdateData] = useState({});
   const { slug } = useParams();
   console.log(slug);
   useEffect(() => {
@@ -20,9 +21,13 @@ const SlugCategoryData = () => {
     (async () => {
       try {
         setLoading(true);
-        const response = await getData(`/job/slug/${slug}`);
-
+        // const response = await getData(`/job/slug/${slug}`);
+        const [response, updateResponse] = await Promise.all([
+          getData(`/job/slug/${slug}`),
+          getData(`/jobupdate/slug/${slug}`),
+        ]);
         setData(response);
+        setUpdateData(updateResponse);
       } catch (error) {
         console.error("Error fetching job data:", error);
       } finally {
@@ -43,7 +48,7 @@ const SlugCategoryData = () => {
             <span className="text-xs sm:text-base lg:text-xl text-purple font-semibold">
               Name of Post:{" "}
             </span>
-            {data?.title || data?.title}
+            {data?.title || updateResponse?.title}
           </h5>
           <h5 className="text-[11px] font-medium sm:text-base lg:text-xl text-gray-800 mt-2 lg:mt-4">
             <span className="text-xs sm:text-base lg:text-xl text-purple font-semibold">
@@ -57,7 +62,9 @@ const SlugCategoryData = () => {
                   month: "2-digit",
                   year: "numeric",
                 })} | ${new Date(
-                  data?.created_at || data?.job?.created_at
+                  data?.created_at ||
+                    data?.job?.created_at ||
+                    updateData?.created_at
                 ).toLocaleTimeString("en-GB", {
                   hour: "2-digit",
                   minute: "2-digit",
@@ -69,7 +76,9 @@ const SlugCategoryData = () => {
             <span className="text-xs sm:text-base lg:text-xl text-purple font-semibold">
               Short Information:{" "}
             </span>
-            {data?.description || data?.job?.description}
+            {data?.description ||
+              data?.job?.description ||
+              updateData?.description}
           </h5>
           <div
             className="responsive-content mt-4"
@@ -77,7 +86,8 @@ const SlugCategoryData = () => {
             //   __html: JSON.parse(data.content).join("") || "",
             // }}
             dangerouslySetInnerHTML={{
-              __html: data?.content || data?.job?.contnet || "",
+              __html:
+                data?.content || data?.job?.contnet || updateData?.content,
             }}
           />
         </div>

@@ -13,7 +13,7 @@ const CategoryBox = ({ name, path, image }) => {
           height={100}
           className="object-contain transition-transform duration-300 hover:scale-110"
           src={image}
-          alt={name}
+          alt={name || "Logo"}
         />
       </div>
 

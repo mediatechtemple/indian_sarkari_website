@@ -5,6 +5,23 @@ import { apiurl, getData } from "@/utils";
 
 const CategoryList = () => {
   const [category, setCategory] = useState([]);
+  const [isMobile, setIsMobile] = useState(false);
+  // Check screen size for responsive behavior
+  useEffect(() => {
+    const updateScreenSize = () => {
+      setIsMobile(window.innerWidth < 768); // Mobile if width < 768px
+    };
+
+    // Initial check
+    updateScreenSize();
+
+    // Listen for window resize
+    window.addEventListener("resize", updateScreenSize);
+
+    return () => {
+      window.removeEventListener("resize", updateScreenSize);
+    };
+  }, []);
   useEffect(() => {
     (async () => {
       try {
@@ -16,6 +33,7 @@ const CategoryList = () => {
       }
     })();
   }, []);
+  const categoryData = isMobile ? category.slice(0, 4) : category.slice(0, 10);
   return (
     <div className="p-1">
       <div className="border border-borderColor shadow-custom mt-6 w-full p-3 pb-4">
@@ -23,11 +41,11 @@ const CategoryList = () => {
           Government Jobs By Top Categories
         </h4>
         <div className="government-box-main grid grid-cols-2 sm:grid-cols-3 md:grid-cols-4 lg:grid-cols-5 xl:grid-cols-5 2xl:grid-cols-5 gap-4 mt-5 lg:mt-8 lg:mb-4 xl:mt-8 xl:mb-4 2xl:mt-8 2xl:mb-4">
-          {category.map((category) => (
+          {categoryData.map((category) => (
             <CategoryBox
               key={category.id}
               name={category.name}
-              image={`${apiurl}/${category.categoryImg}`}
+              image={`${apiurl}/${category.categoryImg} || "/images/logo.png"`}
               //path={`/all-job?category=${category.name}&&id=${category.id}`}
               path={`/${category.name}/${category.id}`}
             />

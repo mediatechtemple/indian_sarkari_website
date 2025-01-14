@@ -55,8 +55,8 @@ const Footer = () => {
                   target="_blank"
                 >
                   <Image
-                    src={`${apiurl}/${item?.socialIcon} || "/images/fb.png"`}
-                    alt={item?.platformName}
+                    src={`${apiurl}/${item?.socialIcon} || "/images/logo.png"`}
+                    alt={item?.platformName || "Social Media Icon"}
                     width={96}
                     height={96}
                   />
