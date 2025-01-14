@@ -1,7 +1,7 @@
 "use client";
 import { useEffect, useState } from "react";
 import CategoryBox from "./job-items";
-import { getData } from "@/utils";
+import { apiurl, getData } from "@/utils";
 
 const CategoryList = () => {
   const [category, setCategory] = useState([]);
@@ -27,7 +27,7 @@ const CategoryList = () => {
             <CategoryBox
               key={category.id}
               name={category.name}
-              // image={`https://newindiansarkari-production.up.railway.app/${category.categoryImg}`}
+              image={`${apiurl}/${category.categoryImg}`}
               //path={`/all-job?category=${category.name}&&id=${category.id}`}
               path={`/${category.name}/${category.id}`}
             />

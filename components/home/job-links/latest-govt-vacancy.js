@@ -43,7 +43,7 @@ const LatestGovtVacancy = () => {
                 <Link
                   //href={`/home?/slug=${item.slug}&&name=${item.jobUrl}&&id=${item.id}`}
                   //href={`${item.slug}`}
-                  href={`${item.Category.name}/${item.slug}`}
+                  href={`${item.Category.name}/${item.slug}/`}
                   target="_blank"
                   className="text-linkcolor  hover:underline"
                 >
