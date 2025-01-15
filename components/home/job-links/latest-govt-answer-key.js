@@ -41,7 +41,7 @@ const LatestAnswerKeyVacancy = () => {
                 <RiCircleFill size={6} className="text-skyblue" />
                 <Link
                   href={`/${item?.Category?.name}/${
-                    item?.slug || item?.job?.slug
+                    item?.job?.slug || item?.slug
                   }`}
                   //href={`${item?.job?.slug || item?.slug}`}
                   //href={`/answer-key?/slug=${item.slug}&&name=${item.answerKeyUrl}&&id=${item.id}`}

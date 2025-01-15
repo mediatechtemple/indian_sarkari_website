@@ -45,7 +45,7 @@ const LatestGovtResult = () => {
                 <RiCircleFill size={6} className="text-skyblue" />
                 <Link
                   href={`/${item?.Category?.name}/${
-                    item?.slug || item?.job?.slug
+                    item?.job?.slug || item?.slug
                   }`}
                   // href={`${item?.job?.slug || item?.slug}`}
                   //href={`/result?/slug=${item?.job?.slug}&&name=${item?.resultUrl}&&id=${item?.id}`}
