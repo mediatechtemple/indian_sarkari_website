@@ -38,7 +38,7 @@ const LatestGovtAdmitCard = () => {
       </div>
       {/* Content section */}
       <div className="p-2 border border-skyblue w-full">
-        <ul className="text-xs lg:text-base">
+        <ul className="space-y-3 text-xs lg:text-base">
           {linkData &&
             linkData?.length > 0 &&
             linkData?.map((item, index) => (

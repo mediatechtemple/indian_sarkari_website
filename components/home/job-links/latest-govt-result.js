@@ -36,7 +36,7 @@ const LatestGovtResult = () => {
       </div>
       {/* Content Section */}
       <div className="p-2 border border-skyblue w-full relative right-1">
-        <ul className="text-xs lg:text-base">
+        <ul className="space-y-3 text-xs lg:text-base">
           {data &&
             data?.length > 0 &&
             data?.length < 20 &&
