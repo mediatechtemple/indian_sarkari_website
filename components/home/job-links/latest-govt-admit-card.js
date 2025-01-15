@@ -17,6 +17,7 @@ const LatestGovtAdmitCard = () => {
     })();
   }, []);
   const linkData = data?.rows?.slice(0, 10);
+  console.log(data);
 
   return (
     <div className="lg:p-4 sm:p-4 p-2">
@@ -47,7 +48,7 @@ const LatestGovtAdmitCard = () => {
                   // href={`${item?.job?.slug || item?.slug}`}
                   //href={`/admit-card?/slug=${item?.job?.slug}&&name=${item?.admitCardUrl}&&id=${item?.id}`}
                   href={`/${item?.Category?.name}/${
-                    item?.slug || item?.job?.slug
+                    item?.job?.slug || item?.slug
                   }`}
                   target="_blank"
                   className="text-linkcolor  hover:underline"

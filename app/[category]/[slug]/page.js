@@ -15,7 +15,7 @@ const SlugCategoryData = () => {
   const [loading, setLoading] = useState(true);
   const [updateData, setUpdateData] = useState({});
   const { slug } = useParams();
-  console.log(slug);
+  //console.log(slug);
   useEffect(() => {
     if (!slug) return;
     (async () => {
@@ -35,7 +35,7 @@ const SlugCategoryData = () => {
       }
     })();
   }, [slug]);
-  console.log(data);
+  // console.log(data);
 
   if (loading) {
     return <Loading />;
@@ -54,14 +54,15 @@ const SlugCategoryData = () => {
             <span className="text-xs sm:text-base lg:text-xl text-purple font-semibold">
               Post Date Update:{" "}
             </span>
-            {data?.created_at
-              ? `${new Date(
-                  data?.created_at || data?.job?.created_at
-                ).toLocaleDateString("en-GB", {
-                  day: "2-digit",
-                  month: "2-digit",
-                  year: "numeric",
-                })} | ${new Date(
+            {data?.date
+              ? `${new Date(data?.date || data?.job?.date).toLocaleDateString(
+                  "en-GB",
+                  {
+                    day: "2-digit",
+                    month: "2-digit",
+                    year: "numeric",
+                  }
+                )} | ${new Date(
                   data?.created_at ||
                     data?.job?.created_at ||
                     updateData?.created_at

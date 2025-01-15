@@ -34,7 +34,7 @@ const CategoryList = () => {
     })();
   }, []);
   const categoryData = isMobile ? category.slice(0, 4) : category.slice(0, 10);
-  console.log(categoryData);
+  // console.log(categoryData);
   return (
     <div className="p-1">
       <div className="border border-borderColor shadow-custom mt-6 w-full p-3 pb-4">
