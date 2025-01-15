@@ -47,7 +47,7 @@ const LatestGovtAdmitCard = () => {
                 <Link
                   // href={`${item?.job?.slug || item?.slug}`}
                   //href={`/admit-card?/slug=${item?.job?.slug}&&name=${item?.admitCardUrl}&&id=${item?.id}`}
-                  href={`/${item?.Category?.name}/${
+                  href={`/${item?.Category?.name.replace(/\s+/g, "-")}/${
                     item?.job?.slug || item?.slug
                   }`}
                   target="_blank"

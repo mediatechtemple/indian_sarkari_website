@@ -40,7 +40,7 @@ const LatestAnswerKeyVacancy = () => {
               <li key={index} className="flex items-center gap-2">
                 <RiCircleFill size={6} className="text-skyblue" />
                 <Link
-                  href={`/${item?.Category?.name}/${
+                  href={`/${item?.Category?.name.replace(/\s+/g, "-")}/${
                     item?.job?.slug || item?.slug
                   }`}
                   //href={`${item?.job?.slug || item?.slug}`}

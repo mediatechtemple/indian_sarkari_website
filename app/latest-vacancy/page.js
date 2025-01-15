@@ -107,7 +107,9 @@ const AllLatestJob = () => {
                   <li key={index} className="flex items-center gap-2">
                     <RiCircleFill size={6} className="text-skyblue" />
                     <Link
-                      href={`/${item.Category.name}/${item.slug}`}
+                      href={`/${item.Category.name.replace(/\s+/g, "-")}/${
+                        item.slug
+                      }`}
                       target="_blank"
                       className="text-linkcolor hover:underline"
                     >
