@@ -2,6 +2,7 @@ import Image from "next/image";
 import Link from "next/link";
 
 const CategoryBox = ({ name, path, image }) => {
+  const placeholderImage = "/images/logo.png";
   return (
     <Link
       href={path}
@@ -12,7 +13,7 @@ const CategoryBox = ({ name, path, image }) => {
           width={100}
           height={100}
           className="object-contain transition-transform duration-300 hover:scale-110"
-          src={image}
+          src={image || placeholderImage}
           alt={name || "Logo"}
         />
       </div>

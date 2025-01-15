@@ -17,7 +17,7 @@ const LatestGovtAdmitCard = () => {
     })();
   }, []);
   const linkData = data?.rows?.slice(0, 10);
-  console.log(data);
+  // console.log(data);
 
   return (
     <div className="lg:p-4 sm:p-4 p-2">
