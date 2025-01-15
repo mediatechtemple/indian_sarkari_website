@@ -48,7 +48,7 @@ const SlugCategoryData = () => {
             <span className="text-xs sm:text-base lg:text-xl text-purple font-semibold">
               Name of Post:{" "}
             </span>
-            {data?.title || updateResponse?.title}
+            {data?.title || updateData?.title}
           </h5>
           <h5 className="text-[11px] font-medium sm:text-base lg:text-xl text-gray-800 mt-2 lg:mt-4">
             <span className="text-xs sm:text-base lg:text-xl text-purple font-semibold">
