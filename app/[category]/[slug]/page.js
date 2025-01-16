@@ -44,28 +44,25 @@ const SlugCategoryData = () => {
     <div className="w-full flex justify-between gap-3 p-1 mt-5 lg:gap-8 md:gap-6 lg:mt-8">
       <div style={{ width: "70%" }}>
         <div className="sm:p-1">
-          <h5 className="text-xs font-medium sm:text-base lg:text-xl text-gray-800 mt-2 lg:mt-4">
+          <h1 className="text-xs font-medium sm:text-base lg:text-xl text-gray-800 mt-2 lg:mt-4">
             <span className="text-xs sm:text-base lg:text-xl text-purple font-semibold">
               Name of Post:{" "}
             </span>
             {data?.title || updateData?.title}
-          </h5>
+          </h1>
           <h5 className="text-[11px] font-medium sm:text-base lg:text-xl text-gray-800 mt-2 lg:mt-4">
             <span className="text-xs sm:text-base lg:text-xl text-purple font-semibold">
               Post Date Update:{" "}
             </span>
             {data?.date
-              ? `${new Date(data?.date || data?.job?.date).toLocaleDateString(
-                  "en-GB",
-                  {
-                    day: "2-digit",
-                    month: "2-digit",
-                    year: "numeric",
-                  }
-                )} | ${new Date(
-                  data?.created_at ||
-                    data?.job?.created_at ||
-                    updateData?.created_at
+              ? `${new Date(
+                  data?.date || data?.job?.date || updateData?.date
+                ).toLocaleDateString("en-GB", {
+                  day: "2-digit",
+                  month: "2-digit",
+                  year: "numeric",
+                })} | ${new Date(
+                  data?.date || data?.job?.date || updateData?.date
                 ).toLocaleTimeString("en-GB", {
                   hour: "2-digit",
                   minute: "2-digit",
