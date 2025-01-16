@@ -105,7 +105,11 @@ body {
   width: 100% !important;
 }
 
-.responsive-content > h2 {
+.responsive-content > h2,
+.responsive-content > h3,
+.responsive-content > h4,
+.responsive-content > h5,
+.responsive-content > h6 {
   text-align: center;
   margin: 10px !important;
   padding: 10px !important;
@@ -113,6 +117,17 @@ body {
   box-shadow: rgba(23, 43, 99, 0.3) 0 7px 28px;
   border-radius: 10px;
   color: whitesmoke;
+}
+/* Ensure proper list styling */
+.responsive-content > ul,
+.responsive-content > ol {
+  margin-left: 20px; /* Adjust left margin for better indentation */
+  padding-left: 10px; /* Add padding to make bullet points clearer */
+}
+
+.responsive-content > li {
+  list-style-type: disc; /* Bullet style */
+  margin-bottom: 5px; /* Space between list items */
 }
 
 /* Ensure correct media query syntax */

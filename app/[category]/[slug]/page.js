@@ -15,7 +15,7 @@ const SlugCategoryData = () => {
   const [loading, setLoading] = useState(true);
   const [updateData, setUpdateData] = useState({});
   const { slug } = useParams();
-  console.log(slug);
+  //console.log(slug);
   useEffect(() => {
     if (!slug) return;
     (async () => {
@@ -40,6 +40,7 @@ const SlugCategoryData = () => {
   if (loading) {
     return <Loading />;
   }
+  console.log(updateData);
   return (
     <div className="w-full flex justify-between gap-3 p-1 mt-5 lg:gap-8 md:gap-6 lg:mt-8">
       <div style={{ width: "70%" }}>
@@ -54,7 +55,7 @@ const SlugCategoryData = () => {
             <span className="text-xs sm:text-base lg:text-xl text-purple font-semibold">
               Post Date Update:{" "}
             </span>
-            {data?.date
+            {data?.date || data?.job?.date || updateData?.date
               ? `${new Date(
                   data?.date || data?.job?.date || updateData?.date
                 ).toLocaleDateString("en-GB", {
