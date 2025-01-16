@@ -19,7 +19,7 @@ const CategoryBox = ({ name, path, image }) => {
       </div>
 
       <div className="w-full text-center py-3 border-t border-borderColor inline-block text-sm font-medium text-darkbule lg:text-[16px]">
-        {name}
+        {name.toUpperCase()}
       </div>
     </Link>
   );
