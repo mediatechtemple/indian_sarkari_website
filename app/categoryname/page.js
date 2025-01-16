@@ -13,7 +13,7 @@ import Loading from "../loading";
 const JobLinksAndCategory = () => {
   const [data, setData] = useState({});
   const [loading, setLoading] = useState(true);
-  //const [updateData, setUpdateData] = useState({});
+  const [updateData, setUpdateData] = useState({});
   const { slug } = useParams();
   useEffect(() => {
     if (!slug) return;

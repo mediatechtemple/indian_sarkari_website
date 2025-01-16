@@ -108,15 +108,15 @@ const AllLatestJob = () => {
                     <RiCircleFill size={6} className="text-skyblue" />
                     <Link
                       href={`/${item.Category.name.replace(/\s+/g, "-")}/${
-                        item.slug
+                        item?.job?.slug || item?.slug
                       }`}
                       target="_blank"
                       className="text-linkcolor hover:underline"
                     >
-                      {item.jobUrl ||
-                        item.admitCardUrl ||
-                        item.answerKeyUrl ||
-                        item.resultUrl}
+                      {item?.jobUrl ||
+                        item?.admitCardUrl ||
+                        item?.answerKeyUrl ||
+                        item?.resultUrl}
                     </Link>
                   </li>
                 ))

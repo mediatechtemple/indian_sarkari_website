@@ -15,7 +15,7 @@ const SlugCategoryData = () => {
   const [loading, setLoading] = useState(true);
   const [updateData, setUpdateData] = useState({});
   const { slug } = useParams();
-  //console.log(slug);
+  console.log(slug);
   useEffect(() => {
     if (!slug) return;
     (async () => {
@@ -34,7 +34,7 @@ const SlugCategoryData = () => {
         setLoading(false);
       }
     })();
-  }, [slug]);
+  }, []);
   // console.log(data);
 
   if (loading) {
