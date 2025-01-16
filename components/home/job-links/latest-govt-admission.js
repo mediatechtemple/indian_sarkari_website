@@ -53,7 +53,7 @@ const LatestGovtAdmission = () => {
                   target="_blank"
                   className="text-linkcolor  hover:underline"
                 >
-                  {item?.admitCardUrl}
+                  {item?.admissionUrl}
                 </Link>
               </li>
             ))}
