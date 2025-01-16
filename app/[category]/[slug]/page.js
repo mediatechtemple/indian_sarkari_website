@@ -40,7 +40,7 @@ const SlugCategoryData = () => {
   if (loading) {
     return <Loading />;
   }
-  console.log(updateData);
+
   return (
     <div className="w-full flex justify-between gap-3 p-1 mt-5 lg:gap-8 md:gap-6 lg:mt-8">
       <div style={{ width: "70%" }}>

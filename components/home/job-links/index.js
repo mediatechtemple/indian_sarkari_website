@@ -3,6 +3,7 @@ import LatestGovtVacancy from "./latest-govt-vacancy";
 import LatestGovtAdmitCard from "./latest-govt-admit-card";
 import LatestGovtResult from "./latest-govt-result";
 import LatestAnswerKeyVacancy from "./latest-govt-answer-key";
+import LatestGovtAdmission from "./latest-govt-admission";
 
 const JobLinks = () => {
   return (
@@ -11,6 +12,7 @@ const JobLinks = () => {
       <LatestGovtAdmitCard />
       <LatestGovtResult />
       <LatestAnswerKeyVacancy />
+      <LatestGovtAdmission />
     </div>
   );
 };
