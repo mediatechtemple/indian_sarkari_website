@@ -6,11 +6,15 @@ export const menuItems = [
     name: "Latest Sarkari Jobs",
     link: "/latest-jobs",
     subMenu: [
-      { name: "All Government Jobs", link: "/all-jobs" },
+      { name: "All Government Jobs", link: "/latest-vacancy?type=jobs" },
       { name: "State Wise Jobs", link: "/state-wise-jobs" },
       { name: "Department Wise Jobs", link: "/department-wise-jobs" },
-      { name: "Jobs Admit Card & Exam", link: "/admit-card-exam" },
-      { name: "Sarkari Result & Answer Key", link: "/result-answer-key" },
+      {
+        name: "Jobs Admit Card & Exam",
+        link: "/latest-vacancy?type=admitCards",
+      },
+      { name: "Sarkari Answer Key", link: "/latest-vacancy?type=answerKeys" },
+      { name: "Sarkari Result", link: "/latest-vacancy?type=results" },
     ],
   },
   {

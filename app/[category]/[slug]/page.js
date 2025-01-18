@@ -14,6 +14,7 @@ const SlugCategoryData = () => {
   const [data, setData] = useState({});
   const [loading, setLoading] = useState(true);
   const [updateData, setUpdateData] = useState({});
+  const [admissionData, setAdmissionData] = useState({});
   const { slug } = useParams();
   //console.log(slug);
   useEffect(() => {
@@ -22,12 +23,23 @@ const SlugCategoryData = () => {
       try {
         setLoading(true);
         // const response = await getData(`/job/slug/${slug}`);
-        const [response, updateResponse] = await Promise.all([
-          getData(`/job/slug/${slug}`),
-          getData(`/jobupdate/slug/${slug}`),
-        ]);
-        setData(response);
-        setUpdateData(updateResponse);
+        const [response, updateResponse, admissionResponse] = await Promise.all(
+          [
+            getData(`/job/slug/${slug}`),
+            getData(`/jobupdate/slug/${slug}`),
+            getData(`/admission/slug/${slug}`),
+          ]
+        );
+        // Only set data if the response is valid
+        if (response && response.title) {
+          setData(response);
+        }
+        if (updateResponse && updateResponse.title) {
+          setUpdateData(updateResponse);
+        }
+        if (admissionResponse && admissionResponse.title) {
+          setAdmissionData(admissionResponse);
+        }
       } catch (error) {
         console.error("Error fetching job data:", error);
       } finally {
@@ -35,7 +47,7 @@ const SlugCategoryData = () => {
       }
     })();
   }, []);
-  // console.log(data);
+  //console.log(admissionData);
 
   if (loading) {
     return <Loading />;
@@ -49,21 +61,30 @@ const SlugCategoryData = () => {
             <span className="text-xs sm:text-base lg:text-xl text-purple font-semibold">
               Name of Post:{" "}
             </span>
-            {data?.title || updateData?.title}
+            {data?.title || updateData?.title || admissionData?.title}
           </h1>
           <h5 className="text-[11px] font-medium sm:text-base lg:text-xl text-gray-800 mt-2 lg:mt-4">
             <span className="text-xs sm:text-base lg:text-xl text-purple font-semibold">
               Post Date Update:{" "}
             </span>
-            {data?.date || data?.job?.date || updateData?.date
+            {data?.date ||
+            data?.job?.date ||
+            updateData?.date ||
+            admissionData?.date
               ? `${new Date(
-                  data?.date || data?.job?.date || updateData?.date
+                  data?.date ||
+                    data?.job?.date ||
+                    updateData?.date ||
+                    admissionData?.date
                 ).toLocaleDateString("en-GB", {
                   day: "2-digit",
                   month: "2-digit",
                   year: "numeric",
                 })} | ${new Date(
-                  data?.date || data?.job?.date || updateData?.date
+                  data?.date ||
+                    data?.job?.date ||
+                    updateData?.date ||
+                    admissionData?.date
                 ).toLocaleTimeString("en-GB", {
                   hour: "2-digit",
                   minute: "2-digit",
@@ -77,7 +98,8 @@ const SlugCategoryData = () => {
             </span>
             {data?.description ||
               data?.job?.description ||
-              updateData?.description}
+              updateData?.description ||
+              admissionData?.description}
           </h5>
           <div
             className="responsive-content mt-4"
@@ -86,7 +108,10 @@ const SlugCategoryData = () => {
             // }}
             dangerouslySetInnerHTML={{
               __html:
-                data?.content || data?.job?.contnet || updateData?.content,
+                data?.content ||
+                data?.job?.contnet ||
+                updateData?.content ||
+                admissionData?.content,
             }}
           />
         </div>

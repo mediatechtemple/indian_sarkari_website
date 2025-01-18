@@ -22,6 +22,8 @@ const AllLatestJob = () => {
   const [admitCardData, setAdmitCardData] = useState([]);
   const [answerKeyData, setAnswerKeyData] = useState([]);
   const [resultData, setResultData] = useState([]);
+
+  const [admissionData, setAdmissionData] = useState([]);
   const [loading, setLoading] = useState(true);
   useEffect(() => {
     const fetchData = async () => {
@@ -33,17 +35,20 @@ const AllLatestJob = () => {
           admitCardResponse,
           answerKeyResponse,
           resultResponse,
+          admissionResponse,
         ] = await Promise.all([
           getData("/job"),
           getData("/jobupdate/get/admit-cards"),
           getData("/jobupdate/get/answer-keys"),
           getData("/jobupdate/get/results"),
+          getData("/admission"),
         ]);
 
         setJobData(jobResponse.rows || []);
         setAdmitCardData(admitCardResponse.rows || []);
         setAnswerKeyData(answerKeyResponse || []);
         setResultData(resultResponse || []);
+        setAdmissionData(admissionResponse.rows || []);
 
         setLoading(false);
       } catch (error) {
@@ -75,6 +80,10 @@ const AllLatestJob = () => {
     case "results":
       dataToShow = resultData;
       headerText = "All Results";
+      break;
+    case "admissions":
+      dataToShow = admissionData;
+      headerText = "All Admissions";
       break;
     default:
       dataToShow = [];
@@ -116,7 +125,8 @@ const AllLatestJob = () => {
                       {item?.jobUrl ||
                         item?.admitCardUrl ||
                         item?.answerKeyUrl ||
-                        item?.resultUrl}
+                        item?.resultUrl ||
+                        item?.admissionUrl}
                     </Link>
                   </li>
                 ))

@@ -43,7 +43,7 @@ const LatestGovtAdmitCard = () => {
             linkData?.length > 0 &&
             linkData?.map((item, index) => (
               <li key={index} className="flex items-center gap-2">
-                <RiCircleFill size={6} className="text-skyblue" />
+                <RiCircleFill size={6} className="text-skyblue flex-shrink-0" />
                 <Link
                   // href={`${item?.job?.slug || item?.slug}`}
                   //href={`/admit-card?/slug=${item?.job?.slug}&&name=${item?.admitCardUrl}&&id=${item?.id}`}

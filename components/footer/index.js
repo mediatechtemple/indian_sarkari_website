@@ -195,7 +195,7 @@ const Footer = () => {
           <ul className="space-y-5 mt-8">
             <li>
               <Link
-                href="latest-vacancy?type=admitCards"
+                href="/latest-vacancy?type=admitCards"
                 className="hover:text-blue-300"
               >
                 Admit Card
@@ -203,7 +203,7 @@ const Footer = () => {
             </li>
             <li>
               <Link
-                href="latest-vacancy?type=results"
+                href="/latest-vacancy?type=results"
                 className="hover:text-blue-300"
               >
                 Exam Results
@@ -211,7 +211,7 @@ const Footer = () => {
             </li>
             <li>
               <Link
-                href="latest-vacancy?type=answerKeys"
+                href="/latest-vacancy?type=answerKeys"
                 className="hover:text-blue-300"
               >
                 Exam Answer Key
@@ -232,7 +232,7 @@ const Footer = () => {
           <ul className="space-y-5 mt-8">
             <li>
               <Link
-                href="latest-vacancy?type=jobs"
+                href="/latest-vacancy?type=jobs"
                 className="hover:text-blue-300"
               >
                 Latest Jobs

@@ -17,7 +17,7 @@ const LatestGovtAdmission = () => {
     })();
   }, []);
   const linkData = data?.rows?.slice(0, 10);
-  // console.log(data);
+  //console.log(data);
 
   return (
     <div className="lg:p-4 sm:p-4 p-2">
@@ -43,7 +43,7 @@ const LatestGovtAdmission = () => {
             linkData?.length > 0 &&
             linkData?.map((item, index) => (
               <li key={index} className="flex items-center gap-2">
-                <RiCircleFill size={6} className="text-skyblue" />
+                <RiCircleFill size={6} className="text-skyblue flex-shrink-0" />
                 <Link
                   // href={`${item?.job?.slug || item?.slug}`}
                   //href={`/admit-card?/slug=${item?.job?.slug}&&name=${item?.admitCardUrl}&&id=${item?.id}`}
@@ -61,7 +61,7 @@ const LatestGovtAdmission = () => {
         <div className="flex justify-end mr-4 my-2">
           <Link
             className="text-base text-darkblue font-semibold lg:text-lg"
-            href="latest-vacancy?type=admitCards"
+            href="latest-vacancy?type=admissions"
           >
             View More
           </Link>

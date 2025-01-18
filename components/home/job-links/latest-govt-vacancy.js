@@ -39,7 +39,10 @@ const LatestGovtVacancy = () => {
             linkData?.length > 0 &&
             linkData?.map((item, index) => (
               <li key={index} className="flex items-center gap-2">
-                <RiCircleFill size={6} className="text-skyblue" />
+                <RiCircleFill
+                  size={6}
+                  className="text-skyblue  flex-shrink-0"
+                />
                 <Link
                   //href={`/home?/slug=${item.slug}&&name=${item.jobUrl}&&id=${item.id}`}
                   //href={`${item.slug}`}
