@@ -11,7 +11,6 @@ import { useEffect, useState } from "react";
 import { getData } from "@/utils";
 import Loading from "@/app/loading";
 import { FiChevronDown, FiChevronUp } from "react-icons/fi";
-import Link from "next/link";
 const SlugCategoryData = () => {
   const [isOpen, setIsOpen] = useState(false);
   const [data, setData] = useState({});
@@ -97,12 +96,12 @@ const SlugCategoryData = () => {
           </h1>
           {/* Table of Contents */}
           {headingData.length > 0 && (
-            <div className="px-2 border rounded shadow-sm bg-gray-50">
+            <div className=" border rounded shadow-sm bg-[#f8f9fa]">
               <h2
                 onClick={() => setIsOpen(!isOpen)}
-                className="w-full flex justify-between text-red font-medium text-xs sm:text-sm sm:py-2 md:text-base  lg:text-lg  lg:font-medium  cursor-pointer"
+                className="w-full flex justify-between font-bold cursor-pointer text-lg text-gray-800"
               >
-                Know what all is in this article
+                Contents Of Page
                 <span className="">
                   {isOpen ? <FiChevronUp /> : <FiChevronDown />}
                 </span>
