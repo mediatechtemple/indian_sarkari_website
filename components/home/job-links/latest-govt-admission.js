@@ -51,7 +51,7 @@ const LatestGovtAdmission = () => {
                     item?.job?.slug || item?.slug
                   }`}
                   target="_blank"
-                  className="text-linkcolor  hover:underline"
+                  className="text-linkcolor  hover:underline font-[400]"
                 >
                   {item?.admissionUrl}
                 </Link>

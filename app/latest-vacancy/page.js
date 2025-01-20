@@ -45,6 +45,7 @@ const AllLatestJob = () => {
         ]);
 
         setJobData(jobResponse.rows || []);
+        console.log(jobResponse.rows);
         setAdmitCardData(admitCardResponse.rows || []);
         setAnswerKeyData(answerKeyResponse || []);
         setResultData(resultResponse || []);

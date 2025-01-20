@@ -10,11 +10,15 @@ import { useParams } from "next/navigation";
 import { useEffect, useState } from "react";
 import { getData } from "@/utils";
 import Loading from "@/app/loading";
+import { FiChevronDown, FiChevronUp } from "react-icons/fi";
+import Link from "next/link";
 const SlugCategoryData = () => {
+  const [isOpen, setIsOpen] = useState(false);
   const [data, setData] = useState({});
   const [loading, setLoading] = useState(true);
   const [updateData, setUpdateData] = useState({});
   const [admissionData, setAdmissionData] = useState({});
+  const [headingData, setHeadingData] = useState([]);
   const { slug } = useParams();
   //console.log(slug);
   useEffect(() => {
@@ -40,6 +44,34 @@ const SlugCategoryData = () => {
         if (admissionResponse && admissionResponse.title) {
           setAdmissionData(admissionResponse);
         }
+        // Extract headings from content
+        const content =
+          response?.content ||
+          response?.job?.content ||
+          updateResponse?.content ||
+          admissionResponse?.content ||
+          "";
+
+        const parser = new DOMParser();
+        const doc = parser.parseFromString(content, "text/html");
+        const headings = Array.from(
+          doc.querySelectorAll("h2, h3, h4, h5, h6")
+        ).map((heading) => ({
+          text: heading.textContent,
+          id:
+            heading.id ||
+            heading.textContent.replace(/\s+/g, "-").toLowerCase(),
+        }));
+        console.log(headings);
+        // Add IDs to headings for anchor links
+        headings.forEach((heading) => {
+          const element = doc.getElementById(heading.id);
+          if (element) {
+            element.id = heading.id;
+          }
+        });
+
+        setHeadingData(headings);
       } catch (error) {
         console.error("Error fetching job data:", error);
       } finally {
@@ -63,6 +95,45 @@ const SlugCategoryData = () => {
             </span>
             {data?.title || updateData?.title || admissionData?.title}
           </h1>
+          {/* Table of Contents */}
+          {headingData.length > 0 && (
+            <div className="px-2 border rounded shadow-sm bg-gray-50">
+              <h2
+                onClick={() => setIsOpen(!isOpen)}
+                className="w-full flex justify-between text-red font-medium text-xs sm:text-sm sm:py-2 md:text-base  lg:text-lg  lg:font-medium  cursor-pointer"
+              >
+                Know what all is in this article
+                <span className="">
+                  {isOpen ? <FiChevronUp /> : <FiChevronDown />}
+                </span>
+              </h2>
+              <ul className="list-disc pl-5 mt-2">
+                {isOpen &&
+                  headingData.map((heading) => (
+                    <li key={heading.id}>
+                      <div
+                        className="text-blue-500 hover:underline cursor-pointer"
+                        onClick={() => {
+                          const elements = Array.from(
+                            document.querySelectorAll("h2, h3, h4, h5, h6")
+                          );
+                          const target = elements.find(
+                            (el) =>
+                              el.textContent.trim() === heading.text.trim()
+                          );
+                          if (target) {
+                            target.scrollIntoView({ behavior: "smooth" });
+                          }
+                        }}
+                      >
+                        {heading.text}
+                      </div>
+                    </li>
+                  ))}
+              </ul>
+            </div>
+          )}
+
           <h5 className="text-[11px] font-medium sm:text-base lg:text-xl text-gray-800 mt-2 lg:mt-4">
             <span className="text-xs sm:text-base lg:text-xl text-purple font-semibold">
               Post Date Update:{" "}
