@@ -22,11 +22,13 @@ const Search = () => {
           admitCardResponse,
           answerKeyResponse,
           resultResponse,
+          admissionResponse,
         ] = await Promise.all([
           getData("/job"),
           getData("/jobupdate/get/admit-cards"),
           getData("/jobupdate/get/answer-keys"),
           getData("/jobupdate/get/results"),
+          getData("/admission"),
         ]);
 
         const combined = [
@@ -42,6 +44,10 @@ const Search = () => {
           ...(resultResponse || []).map((item) => ({
             ...item,
             type: "result",
+          })),
+          ...(admissionResponse.rows || []).map((item) => ({
+            ...item,
+            type: "job",
           })),
         ];
 
@@ -66,6 +72,7 @@ const Search = () => {
           item.admitCardUrl ||
           item.answerKeyUrl ||
           item.resultUrl ||
+          item.admissionUrl ||
           "";
         return searchableField
           .toLowerCase()
@@ -98,7 +105,8 @@ const Search = () => {
                       {item.jobUrl ||
                         item.admitCardUrl ||
                         item.answerKeyUrl ||
-                        item.resultUrl}
+                        item.resultUrl ||
+                        item.admissionUrl}
                     </Link>
                   </li>
                 ))

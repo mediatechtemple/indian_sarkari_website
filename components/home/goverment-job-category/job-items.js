@@ -10,8 +10,8 @@ const CategoryBox = ({ name, path, image }) => {
     >
       <div className="relative w-20 h-20 overflow-hidden bg-transparent flex items-center justify-center">
         <Image
-          width={100}
-          height={100}
+          width={50}
+          height={50}
           className="object-contain transition-transform duration-300 hover:scale-110"
           src={image || placeholderImage}
           alt={name || "Logo"}

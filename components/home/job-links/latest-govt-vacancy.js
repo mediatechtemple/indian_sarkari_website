@@ -26,9 +26,9 @@ const LatestGovtVacancy = () => {
       {/* Responsive padding */}
       <div className="relative p-6 text-white text-center rounded-tl-xl rounded-br-xl min-h-10 lg:text-lg text-xs lg:min-h-20">
         <div className="absolute inset-0 flex items-center justify-center">
-          <p className="relative text-sm font-medium z-10 lg:text-xl lg:font-medium">
+          <h2 className="relative text-sm font-medium z-10 lg:text-xl lg:font-medium">
             Latest Govt. Vacancy
-          </p>
+          </h2>
         </div>
         <div className="absolute top-0 left-0 w-full h-2/4 bg-skyblue transform skew-x-[-20deg]"></div>
         <div className="absolute bottom-0 left-0 w-full h-2/4 bg-skyblue transform skew-x-[20deg]"></div>

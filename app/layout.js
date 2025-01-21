@@ -22,6 +22,12 @@ export const metadata = {
 export default function RootLayout({ children }) {
   return (
     <html lang="en">
+      <link
+        rel="preload"
+        href="https://fonts.googleapis.com/css2?family=Montserrat:wght@400;700&display=swap"
+        as="style"
+      />
+
       <body
         className={`${geistSans.variable} ${geistMono.variable} antialiased`}
       >

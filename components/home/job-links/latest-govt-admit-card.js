@@ -26,9 +26,9 @@ const LatestGovtAdmitCard = () => {
       <div className="relative p-6 text-white text-center border-red-800 rounded-tl-xl rounded-br-xl min-h-10 lg:text-lg text-xs lg:min-h-20">
         {/* Title with layered background */}
         <div className="bg-skyblue absolute inset-0 flex items-center justify-center">
-          <p className="relative text-sm font-medium z-10 lg:text-xl lg:font-medium">
+          <h2 className="relative text-sm font-medium z-10 lg:text-xl lg:font-medium">
             Latest Govt. Admit Card
-          </p>
+          </h2>
         </div>
         {/* Background decorative elements */}
         <div className="absolute top-0 right-2 w-full h-2/4 bg-skyblue transform skew-x-[-20deg]"></div>
